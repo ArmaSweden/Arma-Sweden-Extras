@@ -8,7 +8,7 @@ PixelShaderID="Super";
 VertexShaderID="Super";
 class Stage1
 {
-	texture="CSMA_AimpointCS\Data\AimpointCS_main_NOHQ.paa";
+	texture="csma_aimpoint_cs\Data\AimpointCS_main_NOHQ.paa";
 	uvSource="tex";
 };
 class Stage2
@@ -23,12 +23,12 @@ class Stage3
 };
 class Stage4
 {
-	texture="CSMA_AimpointCS\Data\AimpointCS_main_AS.paa";
+	texture="csma_aimpoint_cs\Data\AimpointCS_main_AS.paa";
 	uvSource="tex";
 };
 class Stage5
 {
-	texture="CSMA_AimpointCS\Data\AimpointCS_main_SMDI.paa";
+	texture="csma_aimpoint_cs\Data\AimpointCS_main_SMDI.paa";
 	uvSource="tex";
 };
 class Stage6

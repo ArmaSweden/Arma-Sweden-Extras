@@ -13,7 +13,7 @@ class CfgPatches {
 class CfgMarkers {
 	class Flag {
 		name = "$STR_CFG_MARKERS_FLAG";
-		icon = "\A3\ui_f\data\map\markers\military\mission_CA.paa";
+		icon = "A3\ui_f\data\map\markers\military\circle_CA.paa";
 		color[] = {1, 0, 0, 1};
 		size = 32;
 		shadow = 1;
@@ -21,8 +21,8 @@ class CfgMarkers {
 	};
     	class ASE_flag_Sweden: Flag {
 		name = "Sweden";
-		icon = "\ASE_common\flag_sweden.paa";
-		texture = "\ASE_common\flag_sweden.paa";
+		icon = "Arma-Sweden-Extras\addons\ASE_common\flag_sweden.paa";
+		texture = "Arma-Sweden-Extras\addons\ASE_common\flag_sweden.paa";
 		size = 36;
 		scope = 1;
 		shadow = 0;

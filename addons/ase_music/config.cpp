@@ -19,7 +19,7 @@ class CfgMusicClasses {
 class CfgMusic {
 	class Trailer {
 		name = "Trailer";
-		sound[] = {"\ASE_music\music\trailer.ogg",1,1};
+		sound[] = {"Arma-Sweden-Extras\addons\ASE_music\music\trailer.ogg",1,1};
 		theme = "Calm";
 		duration = "85";
 		musicClass = "ASE";

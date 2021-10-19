@@ -32,7 +32,7 @@ class CfgWeapons {
 			};
             
 			class StandardSound: BaseSoundModeType {
-				begin1[] = {"\ASE_replacementSounds\sound\pew", 5, 1, 1200};
+				begin1[] = {"Arma-Sweden-Extras\addons\ASE_replacementSounds\sound\pew", 5, 1, 1200};
 				soundBegin[] = {"begin1", 1};
 			};
             
@@ -48,13 +48,13 @@ class CfgWeapons {
 			};
             
 			class StandardSound: BaseSoundModeType {
-				begin1[] = {"\ASE_replacementSounds\sound\pew", 5, 1, 1200};
+				begin1[] = {"Arma-Sweden-Extras\addons\ASE_replacementSounds\sound\pew", 5, 1, 1200};
 				soundBegin[] = {"begin1", 1};
 			};
 
 		};
         
-        reloadMagazineSound[] = {"\ASE_replacementSounds\sound\pew", 5, 1, 10};
+        reloadMagazineSound[] = {"Arma-Sweden-Extras\addons\ASE_replacementSounds\sound\pew", 5, 1, 10};
         
 	};
     

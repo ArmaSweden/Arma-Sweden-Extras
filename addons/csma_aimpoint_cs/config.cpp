@@ -19,8 +19,8 @@ class cfgWeapons
 	{
 		displayName="Aimpoint CS";
 		author="SageNTitled of Arma Sweden";
-		picture="\CSMA_AimpointCS\Data\uipicture_ca.paa";
-		model = "\CSMA_AimpointCS\AimpointCS";
+		picture="\csma_aimpoint_cs\Data\uipicture_ca.paa";
+		model = "\csma_aimpoint_cs\AimpointCS";
 		scope = 2;
 		descriptionShort = "Ett helt vanligt sikte.";
 		weaponInfoType = "RscWeaponZeroing";
@@ -30,7 +30,7 @@ class cfgWeapons
 			mass = 8;
 			opticType = 1;
 			optics = true;
-			modelOptics="\A3\Weapons_F\empty";
+			modelOptics="A3\Weapons_F\empty";
 			class OpticsModes
 			{
 				class CSMA_optic_AimpointCS_Scope
