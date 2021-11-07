@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class ASE_common
+	class ASE_markerCopy
     {
 		author = "SageNTitled";
 		name = "ASE Marker Copy";
@@ -39,7 +39,7 @@ class CfgVehicles
 
 class CfgFunctions
 {
-    class ASE
+    class ASE_functions
     {
         tag = "ASE";
 

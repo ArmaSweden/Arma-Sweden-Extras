@@ -11,7 +11,7 @@
 };
 
 class CfgMusicClasses {
-	class ASE {
+	class ASE_music {
 		displayName = "ASE";
 	};
 };
