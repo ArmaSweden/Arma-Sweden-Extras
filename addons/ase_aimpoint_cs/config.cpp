@@ -1,4 +1,3 @@
-#include "basicDefines_A3.hpp"
 #include "CfgPatches.hpp"
 
 class asdg_OpticRail;    // External class reference
@@ -6,7 +5,7 @@ class asdg_OpticRail1913: asdg_OpticRail
 {
     class compatibleItems
     {
-        CSMA_optic_AimpointCS = 1;
+        ASE_optic_AimpointCS = 1;
     };
 };
 
@@ -15,12 +14,12 @@ class cfgWeapons
 	class ItemCore;
 	class InventoryItem_Base_F;
 	class InventoryOpticsItem_Base_F;
-	class CSMA_optic_AimpointCS: ItemCore
+	class ASE_optic_AimpointCS: ItemCore
 	{
 		displayName="Aimpoint CS";
 		author="SageNTitled of Arma Sweden";
-		picture="\csma_aimpoint_cs\Data\uipicture_ca.paa";
-		model = "\csma_aimpoint_cs\AimpointCS";
+		picture="Arma-Sweden-Extras\addons\ase_aimpoint_cs\data\uipicture_ca.paa";
+		model = "Arma-Sweden-Extras\addons\ase_aimpoint_cs\AimpointCS";
 		scope = 2;
 		descriptionShort = "Ett helt vanligt sikte.";
 		weaponInfoType = "RscWeaponZeroing";
@@ -33,7 +32,7 @@ class cfgWeapons
 			modelOptics="A3\Weapons_F\empty";
 			class OpticsModes
 			{
-				class CSMA_optic_AimpointCS_Scope
+				class ASE_optic_AimpointCS_Scope
 				{
 					opticsID = 1;
 					useModelOptics = false;
@@ -48,7 +47,7 @@ class cfgWeapons
 					distanceZoomMin=300;
 					distanceZoomMax=300;
 				};
-				class CSMA_optic_AimpointCS_Collimator
+				class ASE_optic_AimpointCS_Collimator
 				{
 					opticsID = 2;
 					useModelOptics = false;

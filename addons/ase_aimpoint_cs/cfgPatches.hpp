@@ -1,9 +1,9 @@
 class CfgPatches
 {
-	class CSMA_AimpointCS
+	class ASE_AimpointCS
 	{
 		units[]				 = {};
-		weapons[]			 = {"CSMA_optic_AimpointCS"};
+		weapons[]			 = {"ASE_optic_AimpointCS"};
 		requiredVersion		 = 0.1;
 		requiredAddons[]	 = {"A3_Data_F"};
 	};
