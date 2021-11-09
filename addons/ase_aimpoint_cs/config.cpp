@@ -18,7 +18,7 @@ class cfgWeapons
 	{
 		displayName="Aimpoint CS";
 		author="SageNTitled of Arma Sweden";
-		picture="Arma-Sweden-Extras\addons\ase_aimpoint_cs\data\uipicture_ca.paa";
+		picture="\Arma-Sweden-Extras\addons\ase_aimpoint_cs\data\uipicture_ca.paa";
 		model = "Arma-Sweden-Extras\addons\ase_aimpoint_cs\AimpointCS";
 		scope = 2;
 		descriptionShort = "Ett helt vanligt sikte.";
