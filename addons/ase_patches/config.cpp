@@ -1,6 +1,6 @@
 class CfgPatches {
 
-	class ASE_Patches
+	class ASE_patches
 	{
 		units[] = {};
 		weapons[] = {};
