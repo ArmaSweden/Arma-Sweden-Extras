@@ -1,6 +1,6 @@
 class CfgPatches {
 	class ASE_common {
-		author = "SageNTitled";
+		author = "SageNTitled of Arma Sweden";
 		name = "Arma 3 - User Interface";
 		url = "";
 		requiredAddons[] = {};

@@ -6,7 +6,7 @@ class CfgPatches {
 		weapons[] = {};
 		requiredAddons[] = {};
 		version = "1.0.0";
-		author[]= {"Kingtiger45"};
+		author[]= {"Kingtiger45 of Arma Sweden"};
 	};
 
 };

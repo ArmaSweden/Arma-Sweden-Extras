@@ -2,7 +2,7 @@ class CfgPatches
 {
 	class ASE_markerCopy
     {
-		author = "SageNTitled";
+		author = "SageNTitled of Arma Sweden";
 		name = "ASE Marker Copy";
 		url = "https://www.armasweden.se/";
 		requiredAddons[] = {"ace_common"};
