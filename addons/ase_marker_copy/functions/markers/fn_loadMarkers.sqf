@@ -1,0 +1,1 @@
+player globalChat "load markers";

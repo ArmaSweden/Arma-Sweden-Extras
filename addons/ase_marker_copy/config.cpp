@@ -63,23 +63,25 @@ class RscMarkerToolsGroup: RscControlsGroup
 	{
 		class RscMarkerSaveButton: RscButton
 		{
-			idc = 172603;
+			idc = 172602;
 			text = "S";
 			x = 0;
 			y = 0;
 			w = 0.05;
 			h = 0.05;
 			tooltip = "Save markers";
+			onButtonClick = "[] call ASE_fnc_saveMarkers";
 		};
 		class RscMarkerLoadButton: RscButton
 		{
-			idc = 172604;
+			idc = 172603;
 			text = "L";
 			x = 0.055;
 			y = 0;
 			w = 0.05;
 			h = 0.05;
 			tooltip = "Load markers";
+			onButtonClick = "[] call ASE_fnc_loadMarkers";
 		};
 	};
 };
