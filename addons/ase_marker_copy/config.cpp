@@ -5,7 +5,7 @@ class CfgPatches
 		author = "SageNTitled of Arma Sweden";
 		name = "ASE Marker Copy";
 		url = "https://www.armasweden.se/";
-		requiredAddons[] = {"ace_common"};
+		requiredAddons[] = {"A3_ui_f"}; // Just picked something
 		requiredVersion = 0.100000;
 		units[] = {};
 		weapons[] = {};
