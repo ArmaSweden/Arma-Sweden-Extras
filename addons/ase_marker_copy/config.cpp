@@ -24,8 +24,8 @@ class CfgFunctions
 			class initDisplay {
 				postInit = 1;
 			};
-            class copyMarkers {};
-            class pasteMarkers {};
+            class saveMarkers {};
+            class loadMarkers {};
         };
     };
 };
