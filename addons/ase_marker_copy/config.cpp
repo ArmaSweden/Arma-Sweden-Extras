@@ -21,8 +21,8 @@ class CfgFunctions
         class markers
         {
             file = "Arma-Sweden-Extras\addons\ase_marker_copy\functions\markers";
-			class initDisplay {
-				postInit = 1;
+			class initMarkerTools {
+				preInit = 1;
 			};
             class saveMarkers {};
             class loadMarkers {};
