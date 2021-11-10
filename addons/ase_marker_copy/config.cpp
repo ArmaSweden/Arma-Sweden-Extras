@@ -12,42 +12,44 @@ class CfgPatches
 	};
 };
 
-class CfgVehicles
-{
-    class Man;
-    class CAManBase : Man
-    {
-        class ACE_SelfActions
-        {
-            class copyMarkers
-            {
-                displayName = "Copy markers";
-                condition = "true";
-                exceptions[] = {};
-                statement = "hint 'copy markers'";
-            };
-            class pasteMarkers
-            {
-                displayName = "Paste markers";
-                condition = "true";
-                exceptions[] = {};
-                statement = "hint 'paste markers'";
-            };
-        };
-    };
-};
-
 class CfgFunctions
 {
-    class ASE_functions
+    class ASE
     {
         tag = "ASE";
 
-        class Markers
+        class markers
         {
             file = "Arma-Sweden-Extras\addons\ase_marker_copy\functions\markers";
+			class initDisplay {
+				postInit = 1;
+			};
             class copyMarkers {};
             class pasteMarkers {};
         };
     };
+};
+
+class RscButton;
+
+class RscMarkerToolsDisplay
+{
+	idd = 172600;
+	class ControlsBackground
+	{
+
+	};
+	class Controls
+	{
+		class RscMarkerToolButton: RscButton
+		{
+			idc = 172601;
+			text = "M"; //--- ToDo: Localize;
+			x = safezoneW + safezoneX - 0.7;
+			y = safezoneY + 0.01;
+			w = 0.05;
+			h = 0.05;
+			tooltip = "Open marker tools"; //--- ToDo: Localize;
+		};
+	};
 };

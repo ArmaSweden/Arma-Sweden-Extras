@@ -1,0 +1,86 @@
+// Only run in mission
+if (allDisplays isEqualTo [findDisplay 0]) exitWith {};
+
+// TODO: Tweak offset if ACE is loaded
+
+#define SHIFT_X 0.062121
+
+private _ctrlGroup = ((finddisplay 12) displayCtrl 2302);
+private _divider1 = ((finddisplay 12) displayCtrl 1205);
+private _colorPicker = ((finddisplay 12) displayCtrl 1090);
+private _shapePicker = ((finddisplay 12) displayCtrl 1091);
+private _centerIcon = ((finddisplay 12) displayCtrl 1202);
+private _mapTextureIcon = ((finddisplay 12) displayCtrl 1201);
+private _divider2 = ((finddisplay 12) displayCtrl 1204);
+private _clock = ((finddisplay 12) displayCtrl 101);
+
+_ctrlGroup ctrlSetPosition [
+	(ctrlPosition _ctrlGroup select 0) - SHIFT_X, // Shift to the left
+	(ctrlPosition _ctrlGroup select 1),
+	(ctrlPosition _ctrlGroup select 2) + SHIFT_X, // Increase width to match
+	(ctrlPosition _ctrlGroup select 3)
+];
+
+_divider1 ctrlSetPosition [
+	(ctrlPosition _divider1 select 0) + SHIFT_X, // Shift to the right
+	(ctrlPosition _divider1 select 1)
+];
+
+_colorPicker ctrlSetPosition [
+	(ctrlPosition _colorPicker select 0) + SHIFT_X, // Shift to the right
+	(ctrlPosition _colorPicker select 1)
+];
+
+_shapePicker ctrlSetPosition [
+	(ctrlPosition _shapePicker select 0) + SHIFT_X, // Shift to the right
+	(ctrlPosition _shapePicker select 1)
+];
+
+_centerIcon ctrlSetPosition [
+	(ctrlPosition _centerIcon select 0) + SHIFT_X, // Shift to the right
+	(ctrlPosition _centerIcon select 1)
+];
+
+_mapTextureIcon ctrlSetPosition [
+	(ctrlPosition _mapTextureIcon select 0) + SHIFT_X, // Shift to the right
+	(ctrlPosition _mapTextureIcon select 1)
+];
+
+_divider2 ctrlSetPosition [
+	(ctrlPosition _divider2 select 0) + SHIFT_X, // Shift to the right
+	(ctrlPosition _divider2 select 1)
+];
+
+_clock ctrlSetPosition [
+	(ctrlPosition _clock select 0) + SHIFT_X, // Shift to the right
+	(ctrlPosition _clock select 1)
+];
+
+_ctrlGroup ctrlCommit 3;
+_divider1 ctrlCommit 3;
+_colorPicker ctrlCommit 3;
+_shapePicker ctrlCommit 3;
+_centerIcon ctrlCommit 3;
+_mapTextureIcon ctrlCommit 3;
+_divider2 ctrlCommit 3;
+_clock ctrlCommit 3;
+
+// TODO: Insert custom group between elements
+// TODO: Insert custom button in group
+
+(findDisplay 12) ctrlCreate ["RscMarkerToolButton", 172601];
+
+player globalChat "buttons added";
+
+
+// 2302 = ctrlGroup
+// 	111 = name
+// 	1014 = rank background
+//	116 = rank icon
+//	1205 = first divider
+//	1090 = color picker
+//	1091 = shape picker
+//	1202 = move map to player position icon
+//	1201 = toggle map texture icon
+//	1204 = second divider
+//	101 = time
