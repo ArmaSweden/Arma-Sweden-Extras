@@ -3,6 +3,19 @@ if (allDisplays isEqualTo [findDisplay 0]) exitWith {};
 
 // TODO: Tweak offset if ACE is loaded (maybe not necessary since it's only the center icon that is removed)
 
+// ID:s
+// 2302 = ctrlGroup
+// 	111 = name
+// 	1014 = rank background
+//	116 = rank icon
+//	1205 = first divider
+//	1090 = color picker
+//	1091 = shape picker
+//	1202 = move map to player position icon
+//	1201 = toggle map texture icon
+//	1204 = second divider
+//	101 = time
+
 #define SHIFT_X 0.060121
 
 private _mapDisplay = (finddisplay 12);
@@ -67,23 +80,6 @@ _divider2 ctrlCommit 3;
 _clock ctrlCommit 3;
 
 // Create custom controls
-private _markerToolButton = _mapDisplay ctrlCreate ["RscMarkerToolButton", 172600, _mapToolGroup];
-private _markerToolsGroup = _mapDisplay ctrlCreate ["RscMarkerToolsGroup", 172601];
+private _markerToolButton = _mapDisplay ctrlCreate ["RscMarkerToolButton", 172600];
 
 
-(findDisplay 12) ctrlCreate ["RscMarkerToolButton", 172601];
-
-
-
-
-// 2302 = ctrlGroup
-// 	111 = name
-// 	1014 = rank background
-//	116 = rank icon
-//	1205 = first divider
-//	1090 = color picker
-//	1091 = shape picker
-//	1202 = move map to player position icon
-//	1201 = toggle map texture icon
-//	1204 = second divider
-//	101 = time

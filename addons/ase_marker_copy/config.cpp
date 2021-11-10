@@ -26,6 +26,9 @@ class CfgFunctions
 			};
             class saveMarkers {};
             class loadMarkers {};
+			class openMarkerTools {};
+			class closeMarkerTools {};
+			class toggleMarkerTools {};
         };
     };
 };
@@ -41,7 +44,8 @@ class RscMarkerToolButton: RscButton
 	y = safezoneY + 0.003;
 	w = 0.05;
 	h = 0.05;
-	tooltip = "Open marker tools";
+	tooltip = "Marker tools";
+	onButtonClick = "[] call ASE_fnc_toggleMarkerTools";
 };
 
 class RscMarkerToolsGroup: RscControlsGroup
