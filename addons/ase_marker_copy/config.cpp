@@ -31,25 +31,51 @@ class CfgFunctions
 };
 
 class RscButton;
+class RscControlsGroup;
 
-class RscMarkerToolsDisplay
+class RscMarkerToolButton: RscButton
 {
-	idd = 172600;
+	idc = 172600;
+	text = "M";
+	x = safezoneW + safezoneX - 0.493;
+	y = safezoneY + 0.003;
+	w = 0.05;
+	h = 0.05;
+	tooltip = "Open marker tools";
+};
+
+class RscMarkerToolsGroup: RscControlsGroup
+{
+	idc = 172601;
+	x = safezoneW + safezoneX - 0.493;
+	y = safezoneY + 0.07;
+	w = 0.2;
+	h = 0.1;
 	class ControlsBackground
 	{
-
+		
 	};
 	class Controls
 	{
-		class RscMarkerToolButton: RscButton
+		class RscMarkerSaveButton: RscButton
 		{
-			idc = 172601;
-			text = "M"; //--- ToDo: Localize;
-			x = safezoneW + safezoneX - 0.7;
-			y = safezoneY + 0.01;
+			idc = 172603;
+			text = "S";
+			x = 0;
+			y = 0;
 			w = 0.05;
 			h = 0.05;
-			tooltip = "Open marker tools"; //--- ToDo: Localize;
+			tooltip = "Save markers";
+		};
+		class RscMarkerLoadButton: RscButton
+		{
+			idc = 172604;
+			text = "L";
+			x = 0.055;
+			y = 0;
+			w = 0.05;
+			h = 0.05;
+			tooltip = "Load markers";
 		};
 	};
 };
