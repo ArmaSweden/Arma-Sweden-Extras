@@ -94,17 +94,25 @@ ASE_fnc_initMarkerToolsDisplay = {
 		(ctrlPosition _clock select 1)
 	];
 
-	_mapToolGroup ctrlCommit 3;
-	_divider1 ctrlCommit 3;
-	_colorPicker ctrlCommit 3;
-	_shapePicker ctrlCommit 3;
-	_centerIcon ctrlCommit 3;
-	_mapTextureIcon ctrlCommit 3;
-	_divider2 ctrlCommit 3;
-	_clock ctrlCommit 3;
+	_mapToolGroup ctrlCommit 1;
+	_divider1 ctrlCommit 1;
+	_colorPicker ctrlCommit 1;
+	_shapePicker ctrlCommit 1;
+	_centerIcon ctrlCommit 1;
+	_mapTextureIcon ctrlCommit 1;
+	_divider2 ctrlCommit 1;
+	_clock ctrlCommit 1;
 
 	// Create custom controls
+	// TODO: Put button inside _mapToolGroup to avoid not being able to click when group is focused
 	private _markerToolButton = _mapDisplay ctrlCreate ["RscMarkerToolButton", 172600];
+	_markerToolButton ctrlSetFade 1;
+	_markerToolButton ctrlCommit 0;
+
+	waitUntil { ctrlCommitted _clock };
+
+	_markerToolButton ctrlSetFade 0;
+	_markerToolButton ctrlCommit 1;
 
 	player globalChat "marker tools initialized";
 
