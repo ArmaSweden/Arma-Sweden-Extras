@@ -1,7 +1,7 @@
 [] spawn {
 
 	waitUntil {
-		if (!isNull findDisplay 12) exitWith {};
+		if (!isNull findDisplay 12) exitWith { false };
 		!isNull findDisplay 52
 	};
 
