@@ -18,7 +18,7 @@ class CfgFunctions
     {
         tag = "ASE";
 
-        class markers
+        class Markers
         {
             file = "Arma-Sweden-Extras\addons\ase_marker_copy\functions\markers";
 			class initMarkerTools {
