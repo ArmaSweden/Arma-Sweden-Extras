@@ -1,16 +1,17 @@
 [] spawn {
 
 	waitUntil {
-		if (!isNull findDisplay 12) exitWith { false };
-		!isNull findDisplay 52
+		!isNull findDisplay 52 || !isNull findDisplay 53 || !isNull findDisplay 12
 	};
+
+	if (!isNull findDisplay 12) exitWith { };
 
 	[] call ASE_fnc_initMarkerToolsDisplay;
 
 };
 
 [] spawn {
-
+	
 	waitUntil {
 		!isNull findDisplay 12
 	};
@@ -22,7 +23,6 @@
 ASE_fnc_initMarkerToolsDisplay = {
 
 	// TODO: Check if already initialized
-	// TODO: Should run in map screen (before mission start) and in multiplayer (only runs in single player atm)
 	// TODO: Tweak offset if ACE is loaded (maybe not necessary since it's only the center icon that is removed)
 
 	// ID:s
@@ -41,7 +41,15 @@ ASE_fnc_initMarkerToolsDisplay = {
 	#define SHIFT_X 0.060121
 
 	private _mapDisplay = nil;
-	if (!isNull(finddisplay 12)) then { _mapDisplay = (finddisplay 12) } else { _mapDisplay = (finddisplay 52) };
+	if (!isNull(finddisplay 12)) then {
+		_mapDisplay = (finddisplay 12);
+	};
+	if (!isNull(findDisplay 52)) then {
+		_mapDisplay = (finddisplay 52);
+	};
+	if (!isNull(findDisplay 53)) then {
+		_mapDisplay = findDisplay 53;
+	};
 
 	private _mapToolGroup = (_mapDisplay displayCtrl 2302);
 	private _divider1 = (_mapDisplay displayCtrl 1205);
@@ -113,7 +121,5 @@ ASE_fnc_initMarkerToolsDisplay = {
 
 	_markerToolButton ctrlSetFade 0;
 	_markerToolButton ctrlCommit 1;
-
-	player globalChat "marker tools initialized";
 
 };
