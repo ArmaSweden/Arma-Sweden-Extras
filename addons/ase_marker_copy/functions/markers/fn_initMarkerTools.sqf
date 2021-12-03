@@ -6,7 +6,7 @@
 
 	if (!isNull findDisplay 12) exitWith { };
 
-	[] call ASE_fnc_initMarkerToolsDisplay;
+	call ASE_fnc_initMarkerToolsDisplay;
 
 };
 
@@ -16,7 +16,7 @@
 		!isNull findDisplay 12
 	};
 	
-	[] call ASE_fnc_initMarkerToolsDisplay;
+	call ASE_fnc_initMarkerToolsDisplay;
 	
 };
 
