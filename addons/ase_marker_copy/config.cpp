@@ -29,6 +29,7 @@ class CfgFunctions
 			class openMarkerTools {};
 			class closeMarkerTools {};
 			class toggleMarkerTools {};
+			class getMapDisplay {};
         };
     };
 };

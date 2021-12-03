@@ -40,16 +40,7 @@ ASE_fnc_initMarkerToolsDisplay = {
 
 	#define SHIFT_X 0.060121
 
-	private _mapDisplay = nil;
-	if (!isNull(finddisplay 12)) then {
-		_mapDisplay = (finddisplay 12);
-	};
-	if (!isNull(findDisplay 52)) then {
-		_mapDisplay = (finddisplay 52);
-	};
-	if (!isNull(findDisplay 53)) then {
-		_mapDisplay = findDisplay 53;
-	};
+	private _mapDisplay = call ASE_fnc_getMapDisplay;
 
 	private _mapToolGroup = (_mapDisplay displayCtrl 2302);
 	private _divider1 = (_mapDisplay displayCtrl 1205);
