@@ -5,7 +5,7 @@ class CfgPatches
 		author = "SageNTitled of Arma Sweden";
 		name = "ASE Marker Tools";
 		url = "https://www.armasweden.se/";
-		requiredAddons[] = {"A3_ui_f"}; // Just picked something
+		requiredAddons[] = {"A3_ui_f", "cba_common"};
 		requiredVersion = 0.100000;
 		units[] = {};
 		weapons[] = {};
@@ -18,10 +18,10 @@ class CfgFunctions
     {
         tag = "ASE";
 
-		class Common
+		class Init
 		{
-            file = "Arma-Sweden-Extras\addons\ase_marker_tools\functions\common";
-			class initMarkerSettings {
+            file = "Arma-Sweden-Extras\addons\ase_marker_tools\functions\init";
+			class preInitMarkerTools {
 				preInit = 1;
 			};
 		};
