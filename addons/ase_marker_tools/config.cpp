@@ -20,21 +20,21 @@ class CfgFunctions
 
 		class Common
 		{
-            file = "Arma-Sweden-Extras\addons\ase_marker_copy\functions\common";
+            file = "Arma-Sweden-Extras\addons\ase_marker_tools\functions\common";
 			class initMarkerSettings {
 				preInit = 1;
 			};
 		};
         class Markers
         {
-            file = "Arma-Sweden-Extras\addons\ase_marker_copy\functions\markers";
+            file = "Arma-Sweden-Extras\addons\ase_marker_tools\functions\markers";
             class saveMarkers {};
             class loadMarkers {};
 			class disableMarkerPlacement {};
         };
 		class Display
 		{
-			file = "Arma-Sweden-Extras\addons\ase_marker_copy\functions\display";
+			file = "Arma-Sweden-Extras\addons\ase_marker_tools\functions\display";
 			class initMarkerTools {};
 			class openMarkerTools {};
 			class closeMarkerTools {};
