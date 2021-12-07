@@ -1,4 +1,4 @@
-// TODO: Check if singleplayer
+if (!isMultiplayer) exitWith {};
 
 ((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["MouseButtonDblClick", {
 
