@@ -1,4 +1,14 @@
+// TODO: Check if singleplayer
+
 ((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["MouseButtonDblClick", {
+
+	if (currentChannel == 0 && !ASE_setting_markerTools_disablePlacementGlobal) exitWith {};
+	if (currentChannel == 1 && !ASE_setting_markerTools_disablePlacementSide) exitWith {};
+	if (currentChannel == 2 && !ASE_setting_markerTools_disablePlacementCommand) exitWith {};
+	if (currentChannel == 3 && !ASE_setting_markerTools_disablePlacementGroup) exitWith {};
+	if (currentChannel == 4 && !ASE_setting_markerTools_disablePlacementVehicle) exitWith {};
+	if (currentChannel == 5 && !ASE_setting_markerTools_disablePlacementDirect) exitWith {};
+
 	[] spawn {
 		disableserialization;
 		_display = displayNull;
