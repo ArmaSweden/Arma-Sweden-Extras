@@ -3,7 +3,7 @@ class CfgPatches
 	class ASE_markerCopy
     {
 		author = "SageNTitled of Arma Sweden";
-		name = "ASE Marker Copy";
+		name = "ASE Marker Tools";
 		url = "https://www.armasweden.se/";
 		requiredAddons[] = {"A3_ui_f"}; // Just picked something
 		requiredVersion = 0.100000;
