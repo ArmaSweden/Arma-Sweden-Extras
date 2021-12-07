@@ -2,7 +2,7 @@
 	"ASE_setting_markerTools_enabled",
 	"CHECKBOX",
 	["Enable marker tools", "Enables marker tools on the map."],
-	["ASE Marker Tools", "Marker placement restrictions"],
+	["ASE Marker Tools"],
 	true
 ] call CBA_fnc_addSetting;
 
