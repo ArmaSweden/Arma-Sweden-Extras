@@ -1,3 +1,5 @@
+// TODO: Move init to separate init file
+
 [] spawn {
 
 	waitUntil {

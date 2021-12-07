@@ -18,6 +18,13 @@ class CfgFunctions
     {
         tag = "ASE";
 
+		class Common
+		{
+            file = "Arma-Sweden-Extras\addons\ase_marker_copy\functions\common";
+			class initMarkerSettings {
+				preInit = 1;
+			};
+		};
         class Markers
         {
             file = "Arma-Sweden-Extras\addons\ase_marker_copy\functions\markers";

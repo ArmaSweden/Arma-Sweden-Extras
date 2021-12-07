@@ -1,0 +1,1 @@
+call ASE_fnc_disableMarkerPlacement;
