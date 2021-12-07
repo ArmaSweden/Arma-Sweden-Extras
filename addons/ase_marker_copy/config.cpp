@@ -35,9 +35,7 @@ class CfgFunctions
 		class Display
 		{
 			file = "Arma-Sweden-Extras\addons\ase_marker_copy\functions\display";
-			class initMarkerTools {
-				preInit = 1;
-			};
+			class initMarkerTools {};
 			class openMarkerTools {};
 			class closeMarkerTools {};
 			class toggleMarkerTools {};
