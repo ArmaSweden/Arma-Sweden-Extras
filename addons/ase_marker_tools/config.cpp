@@ -3,9 +3,9 @@ class CfgPatches
 	class ASE_markerCopy
     {
 		author = "SageNTitled of Arma Sweden";
-		name = "ASE Marker Copy";
+		name = "ASE Marker Tools";
 		url = "https://www.armasweden.se/";
-		requiredAddons[] = {"A3_ui_f"}; // Just picked something
+		requiredAddons[] = {"A3_ui_f", "cba_common"};
 		requiredVersion = 0.100000;
 		units[] = {};
 		weapons[] = {};
@@ -20,18 +20,25 @@ class CfgFunctions
 
         class Markers
         {
-            file = "Arma-Sweden-Extras\addons\ase_marker_copy\functions\markers";
-			class initMarkerTools {
-				preInit = 1;
-			};
+            file = "Arma-Sweden-Extras\addons\ase_marker_tools\functions\markers";
             class saveMarkers {};
             class loadMarkers {};
+			class disableMarkerPlacement {};
+        };
+		class Display
+		{
+			file = "Arma-Sweden-Extras\addons\ase_marker_tools\functions\display";
+			class initMarkerTools {};
 			class openMarkerTools {};
 			class closeMarkerTools {};
 			class toggleMarkerTools {};
 			class getMapDisplay {};
-        };
+		};
     };
+};
+
+class Extended_PreInit_EventHandlers {
+    ASE_MarkerTools_PreInit = "call compile preprocessFileLineNumbers 'Arma-Sweden-Extras\addons\ase_marker_tools\XEH_preInit.sqf'";
 };
 
 class RscButton;
