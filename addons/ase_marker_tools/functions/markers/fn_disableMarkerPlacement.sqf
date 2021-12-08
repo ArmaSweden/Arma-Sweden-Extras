@@ -30,6 +30,7 @@ if (!isMultiplayer) exitWith {};
 	// command
 	// group
 	// vehicle
+	// direct
 
 	_ranks = ["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"];
 	if (_ranks find rank player >= ASE_setting_markerTools_disablePlacementRankException) exitWith {};
@@ -44,22 +45,45 @@ if (!isMultiplayer) exitWith {};
 
 		if (!isNull _display) then {
 
-			if (ASE_setting_markerTools_disablePlacementVehicle &&
-			ASE_setting_markerTools_disablePlacementGroup &&
-			ASE_setting_markerTools_disablePlacementCommand &&
-			ASE_setting_markerTools_disablePlacementSide &&
-			ASE_setting_markerTools_disablePlacementGlobal) exitWith {
+			_isChannelDisabled = [
+				ASE_setting_markerTools_disablePlacementGlobal,
+				ASE_setting_markerTools_disablePlacementSide,
+				ASE_setting_markerTools_disablePlacementCommand,
+				ASE_setting_markerTools_disablePlacementGroup,
+				ASE_setting_markerTools_disablePlacementVehicle
+			];
+
+			if (_isChannelDisabled find false == -1) exitWith {
+
 				_display closeDisplay 0;
+
 			};
 
-			_channelList = _display displayCtrl 103;
-			if (ASE_setting_markerTools_disablePlacementVehicle) then { _channelList lbDelete 4 };
-			if (ASE_setting_markerTools_disablePlacementGroup) then { _channelList lbDelete 3 };
-			if (ASE_setting_markerTools_disablePlacementCommand) then { _channelList lbDelete 2 };
-			if (ASE_setting_markerTools_disablePlacementSide) then { _channelList lbDelete 1 };
-			if (ASE_setting_markerTools_disablePlacementGlobal) then { _channelList lbDelete 0 };
+			_channelControl = _display displayCtrl 103;
+			
+			if (ASE_setting_markerTools_disablePlacementVehicle) then { _channelControl lbDelete 4 };
+			if (ASE_setting_markerTools_disablePlacementGroup) then { _channelControl lbDelete 3 };
+			if (ASE_setting_markerTools_disablePlacementCommand) then { _channelControl lbDelete 2 };
+			if (ASE_setting_markerTools_disablePlacementSide) then { _channelControl lbDelete 1 };
+			if (ASE_setting_markerTools_disablePlacementGlobal) then { _channelControl lbDelete 0 };
 
-			// TODO: Select first element if current selection is empty
+			if (_isChannelDisabled select (currentChannel)) then {
+
+				_channelControl lbSetCurSel 0;
+
+			} else {
+
+				for "_i" from 0 to (lbSize _channelControl - 1) do {
+
+					if ((parseNumber (_channelControl lbData _i)) isEqualTo currentChannel) exitWith {
+
+						_channelControl lbSetCurSel _i;
+
+					};
+
+				};
+				
+			};
 
 		};
 
