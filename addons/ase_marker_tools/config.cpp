@@ -18,13 +18,6 @@ class CfgFunctions
     {
         tag = "ASE";
 
-		class Init
-		{
-            file = "Arma-Sweden-Extras\addons\ase_marker_tools\functions\init";
-			class preInitMarkerTools {
-				preInit = 1;
-			};
-		};
         class Markers
         {
             file = "Arma-Sweden-Extras\addons\ase_marker_tools\functions\markers";
@@ -42,6 +35,10 @@ class CfgFunctions
 			class getMapDisplay {};
 		};
     };
+};
+
+class Extended_PreInit_EventHandlers {
+    ASE_MarkerTools_PreInit = "call compile preprocessFileLineNumbers 'Arma-Sweden-Extras\addons\ase_marker_tools\XEH_preInit.sqf'";
 };
 
 class RscButton;
