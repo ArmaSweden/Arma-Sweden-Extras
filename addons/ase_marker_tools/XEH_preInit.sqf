@@ -76,7 +76,9 @@
 
 	if (!isNull findDisplay 12) exitWith { };
 
-	call ASE_fnc_initMarkerTools;
+	if (ASE_setting_markerTools_enabled) then {
+		call ASE_fnc_initMarkerTools;
+	};
 	call ASE_fnc_disableMarkerPlacement;
 
 };
@@ -87,7 +89,9 @@
 		!isNull findDisplay 12
 	};
 	
-	call ASE_fnc_initMarkerTools;
+	if (ASE_setting_markerTools_enabled) then {
+		call ASE_fnc_initMarkerTools;
+	};
 	call ASE_fnc_disableMarkerPlacement;
 	
 };
