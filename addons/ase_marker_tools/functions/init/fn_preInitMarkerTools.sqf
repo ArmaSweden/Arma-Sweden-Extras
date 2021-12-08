@@ -68,7 +68,7 @@
 	["Rank exception to marker restrictions", "Units with this rank or higher will be able to place markers despite restrictions."],
 	["ASE Marker Tools", "Marker placement restrictions"],
 	[
-		["NONE", "PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"],
+		[10, 0, 1, 2, 3, 4, 5, 6],
 		["No exceptions", "Private", "Corporal", "Sergeant", "Lieutenant", "Captain", "Major", "Colonel"],
 		0
 	]

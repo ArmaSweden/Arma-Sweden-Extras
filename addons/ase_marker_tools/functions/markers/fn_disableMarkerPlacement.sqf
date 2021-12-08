@@ -2,6 +2,9 @@ if (!isMultiplayer) exitWith {};
 
 ((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["MouseButtonDblClick", {
 
+	_ranks = ["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"];
+	if (_ranks find rank player >= ASE_setting_markerTools_disablePlacementRankException) exitWith {};
+
 	if (currentChannel == 0 && !ASE_setting_markerTools_disablePlacementGlobal) exitWith {};
 	if (currentChannel == 1 && !ASE_setting_markerTools_disablePlacementSide) exitWith {};
 	if (currentChannel == 2 && !ASE_setting_markerTools_disablePlacementCommand) exitWith {};
