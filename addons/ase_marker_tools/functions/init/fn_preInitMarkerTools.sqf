@@ -47,14 +47,6 @@
 ] call CBA_fnc_addSetting;
 
 [
-	"ASE_setting_markerTools_disablePlacementDirect",
-	"CHECKBOX",
-	["Disable markers in direct channel", "Disables placement of markers in the direct channel."],
-	["ASE Marker Tools", "Marker placement restrictions"],
-	false
-] call CBA_fnc_addSetting;
-
-[
 	"ASE_setting_markerTools_disablePlacementBeforeStart",
 	"CHECKBOX",
 	["Disable markers in planning phase", "Disables placement of markers in the first map screen, before the game starts."],
