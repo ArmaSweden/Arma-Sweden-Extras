@@ -1,7 +1,7 @@
 // TODO: Check if already initialized
 // TODO: Tweak offset if ACE is loaded (maybe not necessary since it's only the center icon that is removed)
 
-// ID:s
+// IDs
 // 2302 = ctrlGroup
 // 	111 = name
 // 	1014 = rank background
