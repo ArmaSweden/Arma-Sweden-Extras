@@ -46,6 +46,7 @@
 	false
 ] call CBA_fnc_addSetting;
 
+/*
 [
 	"ASE_setting_markerTools_disablePlacementBeforeStart",
 	"CHECKBOX",
@@ -53,6 +54,7 @@
 	["ASE Marker Tools", "Marker placement restrictions"],
 	false
 ] call CBA_fnc_addSetting;
+*/
 
 [
 	"ASE_setting_markerTools_disablePlacementRankException",
