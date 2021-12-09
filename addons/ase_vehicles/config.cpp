@@ -64,10 +64,7 @@ class CfgVehicles
 					"Arma-Sweden-Extras\addons\ase_vehicles\data\turret.jpg",
 					"Arma-Sweden-Extras\addons\ase_vehicles\data\wheels.jpg"
 				};
-				factions[] = { 
-					"ASE_B_Sweden",
-					"CUP_B"
-				};
+				factions[] = { "ASE_B_Sweden" };
 			};
 		};
 	};
