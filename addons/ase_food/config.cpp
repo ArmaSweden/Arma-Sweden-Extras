@@ -61,6 +61,12 @@ class CfgWeapons
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 3;
         };
+        acex_field_rations_consumeTime = -1;
+        acex_field_rations_thirstQuenched = -1;
+        acex_field_rations_consumeText = "";
+        acex_field_rations_replacementItem = "";
+        acex_field_rations_consumeAnims[] = {};
+        acex_field_rations_consumeSounds[] = {};
 	};
 };
 
