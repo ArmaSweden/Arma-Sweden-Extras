@@ -85,6 +85,7 @@ class CfgVehicles
 {
 	class Item_Base_F;
 	
+    // TODO: Add as regular "thing" object for decoration
 	class ASE_TrokaderoBottle_Item : Item_Base_F {
 		author = "SageNTitled of Arma Sweden";
         scope = 2;
@@ -101,8 +102,8 @@ class CfgVehicles
 	};
 	class ASE_TrokaderoBottle_TwoThirds_Item : Item_Base_F {
 		author = "SageNTitled of Arma Sweden";
-        scope = 2;
-        scopeCurator = 2;
+        scope = 1;
+        scopeCurator = 1;
         displayName = "Bottle (Trokadero) (2/3)";
         vehicleClass = "Items";
         class TransportItems {
@@ -114,8 +115,8 @@ class CfgVehicles
 	};
     class ASE_TrokaderoBottle_OneThird_Item : Item_Base_F {
 		author = "SageNTitled of Arma Sweden";
-        scope = 2;
-        scopeCurator = 2;
+        scope = 1;
+        scopeCurator = 1;
         displayName = "Bottle (Trokadero) (1/3)";
         vehicleClass = "Items";
         class TransportItems {
@@ -127,8 +128,8 @@ class CfgVehicles
 	};
 	class ASE_TrokaderoBottle_Empty_Item : Item_Base_F {
 		author = "SageNTitled of Arma Sweden";
-        scope = 2;
-        scopeCurator = 2;
+        scope = 1;
+        scopeCurator = 1;
         displayName = "Bottle (Trokadero) (empty)";
         vehicleClass = "Items";
         class TransportItems {
