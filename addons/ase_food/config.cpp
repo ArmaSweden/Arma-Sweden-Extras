@@ -98,11 +98,24 @@ class CfgVehicles
             };
         };
 	};
-	class ASE_TrokaderoBottle_Half_Item : Item_Base_F {
+	class ASE_TrokaderoBottle_TwoThirds_Item : Item_Base_F {
 		author = "SageNTitled of Arma Sweden";
         scope = 2;
         scopeCurator = 2;
-        displayName = "Trokadero bottle (half)";
+        displayName = "Trokadero bottle (2/3)";
+        vehicleClass = "Items";
+        class TransportItems {
+            class _xx_ASE_TrokaderoBottle {
+                name = "ASE_TrokaderoBottle_Half";
+                count = 1;
+            };
+        };
+	};
+    class ASE_TrokaderoBottle_OneThird_Item : Item_Base_F {
+		author = "SageNTitled of Arma Sweden";
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Trokadero bottle (1/3)";
         vehicleClass = "Items";
         class TransportItems {
             class _xx_ASE_TrokaderoBottle {
