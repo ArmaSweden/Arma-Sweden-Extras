@@ -30,8 +30,8 @@ class CfgWeapons
         };
 		acex_field_rations_consumeTime = 10;
         acex_field_rations_thirstQuenched = 10;
-        acex_field_rations_consumeText = "Drinking Trokadero";
-        acex_field_rations_replacementItem = "ACE_TrokaderoBottle_Half";
+        acex_field_rations_consumeText = "Drinking Trokadero...";
+        acex_field_rations_replacementItem = "ASE_TrokaderoBottle_TwoThirds";
         acex_field_rations_consumeAnims[] = {
             "acex_field_rations_drinkStand",
             "acex_field_rations_drinkCrouch",
@@ -43,23 +43,34 @@ class CfgWeapons
             "acex_field_rations_drink2"
         };
 	};
-	class ASE_TrokaderoBottle_Half : ASE_TrokaderoBottle
+    class ASE_TrokaderoBottle_TwoThirds : ASE_TrokaderoBottle
 	{
-		displayName = "Trokadero bottle (half)";
-        descriptionShort = "A bottle of Trokadero, half empty. Consume within three days.";
-		// TODO: Add model/texture of half-empty bottle
+		displayName = "Trokadero bottle (2/3)";
+        descriptionShort = "A bottle of Trokadero. Consume within three days.";
+		// TODO: Add model/texture
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 4;
+        };
+        acex_field_rations_replacementItem = "ASE_TrokaderoBottle_OneThird";
+	};
+	class ASE_TrokaderoBottle_OneThird : ASE_TrokaderoBottle
+	{
+		displayName = "Trokadero bottle (1/3)";
+        descriptionShort = "A bottle of Trokadero. Consume within three days.";
+		// TODO: Add model/texture
         class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 3;
         };
-        acex_field_rations_replacementItem = "ACE_TrokaderoBottle_Empty";
+        acex_field_rations_replacementItem = "ASE_TrokaderoBottle_Empty";
 	};
+    // TODO: Make undrinkable
 	class ASE_TrokaderoBottle_Empty : ASE_TrokaderoBottle
 	{
 		displayName = "Trokadero bottle (empty)";
         descriptionShort = "An empty bottle of Trokadero.";
 		// TODO: Add model/texture of empty bottle
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 3;
+            mass = 2;
         };
         acex_field_rations_consumeTime = -1;
         acex_field_rations_thirstQuenched = -1;
