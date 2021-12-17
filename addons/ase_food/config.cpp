@@ -106,7 +106,7 @@ class CfgVehicles
         vehicleClass = "Items";
         class TransportItems {
             class _xx_ASE_TrokaderoBottle {
-                name = "ASE_TrokaderoBottle_Half";
+                name = "ASE_TrokaderoBottle_TwoThirds";
                 count = 1;
             };
         };
@@ -119,7 +119,7 @@ class CfgVehicles
         vehicleClass = "Items";
         class TransportItems {
             class _xx_ASE_TrokaderoBottle {
-                name = "ASE_TrokaderoBottle_Half";
+                name = "ASE_TrokaderoBottle_OneThird";
                 count = 1;
             };
         };
