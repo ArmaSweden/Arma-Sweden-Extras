@@ -21,7 +21,7 @@ class CfgWeapons
 	{
 		author = "SageNTitled of Arma Sweden";
         scope = 2;
-        displayName = "Trokadero bottle";
+        displayName = "Bottle (Trokadero)";
         descriptionShort = "A bottle of Trokadero. Consume by 11.05.2022.";
         model = "Arma-Sweden-Extras\addons\ase_food\data\trokadero_bottle.p3d";
         picture = "\Arma-Sweden-Extras\addons\ase_food\ui\trokadero.paa";
@@ -45,7 +45,7 @@ class CfgWeapons
 	};
     class ASE_TrokaderoBottle_TwoThirds : ASE_TrokaderoBottle
 	{
-		displayName = "Trokadero bottle (2/3)";
+		displayName = "Bottle (Trokadero) (2/3)";
         descriptionShort = "A bottle of Trokadero. Consume within three days.";
 		// TODO: Add model/texture
         class ItemInfo: CBA_MiscItem_ItemInfo {
@@ -55,7 +55,7 @@ class CfgWeapons
 	};
 	class ASE_TrokaderoBottle_OneThird : ASE_TrokaderoBottle
 	{
-		displayName = "Trokadero bottle (1/3)";
+		displayName = "Bottle (Trokadero) (1/3)";
         descriptionShort = "A bottle of Trokadero. Consume within three days.";
 		// TODO: Add model/texture
         class ItemInfo: CBA_MiscItem_ItemInfo {
@@ -66,7 +66,7 @@ class CfgWeapons
     // TODO: Make undrinkable
 	class ASE_TrokaderoBottle_Empty : ASE_TrokaderoBottle
 	{
-		displayName = "Trokadero bottle (empty)";
+		displayName = "Bottle (Trokadero) (empty)";
         descriptionShort = "An empty bottle of Trokadero.";
 		// TODO: Add model/texture of empty bottle
         class ItemInfo: CBA_MiscItem_ItemInfo {
@@ -89,7 +89,7 @@ class CfgVehicles
 		author = "SageNTitled of Arma Sweden";
         scope = 2;
         scopeCurator = 2;
-        displayName = "Trokadero bottle";
+        displayName = "Bottle (Trokadero)";
         vehicleClass = "Items";
         // TODO: Add editor preview picture
         class TransportItems {
@@ -103,7 +103,7 @@ class CfgVehicles
 		author = "SageNTitled of Arma Sweden";
         scope = 2;
         scopeCurator = 2;
-        displayName = "Trokadero bottle (2/3)";
+        displayName = "Bottle (Trokadero) (2/3)";
         vehicleClass = "Items";
         class TransportItems {
             class _xx_ASE_TrokaderoBottle {
@@ -116,7 +116,7 @@ class CfgVehicles
 		author = "SageNTitled of Arma Sweden";
         scope = 2;
         scopeCurator = 2;
-        displayName = "Trokadero bottle (1/3)";
+        displayName = "Bottle (Trokadero) (1/3)";
         vehicleClass = "Items";
         class TransportItems {
             class _xx_ASE_TrokaderoBottle {
@@ -129,7 +129,7 @@ class CfgVehicles
 		author = "SageNTitled of Arma Sweden";
         scope = 2;
         scopeCurator = 2;
-        displayName = "Trokadero bottle (empty)";
+        displayName = "Bottle (Trokadero) (empty)";
         vehicleClass = "Items";
         class TransportItems {
             class _xx_ASE_TrokaderoBottle {
