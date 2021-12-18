@@ -26,7 +26,7 @@ class CfgWeapons
         model = "Arma-Sweden-Extras\addons\ase_food\data\trokadero_bottle.p3d";
         picture = "\Arma-Sweden-Extras\addons\ase_food\ui\trokadero.paa";
 		class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 5;
+            mass = 8;
         };
 		acex_field_rations_consumeTime = 10;
         acex_field_rations_thirstQuenched = 10;
@@ -49,7 +49,7 @@ class CfgWeapons
         descriptionShort = "A bottle of Trokadero. Consume within three days.";
 		// TODO: Add model/texture
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 4;
+            mass = 7;
         };
         acex_field_rations_replacementItem = "ASE_TrokaderoBottle_OneThird";
 	};
@@ -59,7 +59,7 @@ class CfgWeapons
         descriptionShort = "A bottle of Trokadero. Consume within three days.";
 		// TODO: Add model/texture
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 3;
+            mass = 6;
         };
         acex_field_rations_replacementItem = "ASE_TrokaderoBottle_Empty";
 	};
@@ -70,7 +70,7 @@ class CfgWeapons
         descriptionShort = "An empty bottle of Trokadero.";
 		// TODO: Add model/texture of empty bottle
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 2;
+            mass = 5;
         };
         acex_field_rations_consumeTime = -1;
         acex_field_rations_thirstQuenched = -1;
