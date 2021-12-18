@@ -59,7 +59,7 @@ class CfgVehicles
 			{
 				displayName = "M90 Woodland";
 				author = "SageNTitled of Arma Sweden";
-				textures[] = {
+				textures[] = { // TODO: Make PAA
 					"Arma-Sweden-Extras\addons\ase_vehicles\data\hull.jpg",
 					"Arma-Sweden-Extras\addons\ase_vehicles\data\turret.jpg",
 					"Arma-Sweden-Extras\addons\ase_vehicles\data\wheels.jpg"
