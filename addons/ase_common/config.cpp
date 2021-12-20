@@ -3,7 +3,7 @@ class CfgPatches
 	class ASE_common
 	{
 		author = "SageNTitled of Arma Sweden";
-		name = "Arma 3 - User Interface";
+		name = "ASE Common";
 		url = "";
 		requiredAddons[] = {};
 		requiredVersion = 0.100000;
