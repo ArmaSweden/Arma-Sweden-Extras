@@ -6,7 +6,7 @@ class CfgPatches
 		name = "ASE Marker Tools";
 		url = "https://www.armasweden.se/";
 		requiredAddons[] = {"A3_ui_f", "cba_common"};
-		requiredVersion = 0.100000;
+		requiredVersion = 0.1;
 		units[] = {};
 		weapons[] = {};
 	};

@@ -4,7 +4,7 @@ class CfgPatches
 	{
 		author = "SageNTitled of Arma Sweden";
 		name = "ASE Common";
-		url = "";
+		url = "https://www.armasweden.se/";
 		requiredAddons[] = {};
 		requiredVersion = 0.100000;
 		units[] = {};

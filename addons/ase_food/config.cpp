@@ -6,7 +6,7 @@ class CfgPatches
 		name = "ASE Food";
 		url = "https://www.armasweden.se/";
 		requiredAddons[] = {"ace_common", "ace_main"};
-		requiredVersion = 0.100000;
+		requiredVersion = 0.1;
 		units[] = {};
 		weapons[] = {};
 	};
