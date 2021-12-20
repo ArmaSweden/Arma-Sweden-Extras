@@ -59,14 +59,14 @@ class CfgVehicles
 			{
 				displayName = "M90 Woodland";
 				author = "SageNTitled of Arma Sweden";
-				textures[] = { // TODO: Make PAA
-					"Arma-Sweden-Extras\addons\ase_vehicles\data\Strv122\hull.jpg",
-					"Arma-Sweden-Extras\addons\ase_vehicles\data\Strv122\turret.jpg",
+				textures[] = {
+					"Arma-Sweden-Extras\addons\ase_vehicles\data\Strv122\hull.paa",
+					"Arma-Sweden-Extras\addons\ase_vehicles\data\Strv122\turret.paa",
 					"CUP\TrackedVehicles\CUP_TrackedVehicles_Leopard2\data\wdl_Wheels_co.paa",
 					"CUP\TrackedVehicles\CUP_TrackedVehicles_Leopard2\data\wdl_trans_ca.paa",
-					"a3\armor_f\data\camonet_nato_green_co.paa",
-					"CUP\TrackedVehicles\CUP_TrackedVehicles_Leopard2\data\license_plate_co.paa",
-					"CUP\TrackedVehicles\CUP_TrackedVehicles_Leopard2\data\unit_sign_armor_ca.paa"
+					"a3\armor_f\data\camonet_nato_green_co.paa", // TODO: Create M90 camo net
+					"CUP\TrackedVehicles\CUP_TrackedVehicles_Leopard2\data\license_plate_co.paa", // TODO: Change license plate or remove
+					"CUP\TrackedVehicles\CUP_TrackedVehicles_Leopard2\data\unit_sign_armor_ca.paa" // TODO: Maybe remove
 				};
 				factions[] = { "ASE_B_Sweden" };
 			};
