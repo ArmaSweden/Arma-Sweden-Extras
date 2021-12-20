@@ -63,7 +63,6 @@ class CfgWeapons
         };
         acex_field_rations_replacementItem = "ASE_TrokaderoBottle_Empty";
 	};
-    // TODO: Make undrinkable
 	class ASE_TrokaderoBottle_Empty : ASE_TrokaderoBottle
 	{
 		displayName = "Bottle (Trokadero) (empty)";
