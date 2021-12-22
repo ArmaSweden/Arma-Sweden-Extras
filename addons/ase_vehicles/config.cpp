@@ -43,7 +43,7 @@ class CfgEditorSubcategories
 class CfgVehicles
 {
 	class CUP_B_Leopard2A6_GER;
-	class CUP_B_Leopard2A6_GER_import : CUP_B_Leopard2A6_GER { class EventHandlers; };
+	class CUP_B_Leopard2A6_GER_import : CUP_B_Leopard2A6_GER { scope = 0; class EventHandlers; };
 	class ASE_B_Strv122 : CUP_B_Leopard2A6_GER_import
 	{
 		scope = 0;
