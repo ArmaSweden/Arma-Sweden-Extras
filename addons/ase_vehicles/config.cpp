@@ -30,6 +30,10 @@ class CfgVehicleClasses
 	{
 		displayName = "Tanks";
 	};
+	class ASE_B_Sweden_helicopters
+	{
+		displayName = "Helicopters";
+	};
 };
 
 class CfgEditorSubcategories
@@ -37,6 +41,10 @@ class CfgEditorSubcategories
 	class ASE_Eden_tanks
 	{
 		displayName = "Tanks";
+	};
+	class ASE_Eden_helicopters
+	{
+		displayName = "Helicopters";
 	};
 };
 
@@ -83,5 +91,43 @@ class CfgVehicles
 		side = 1;
 		faction = "ASE_B_Sweden";
 		editorSubcategory = "ASE_Eden_tanks";
+	};
+
+	class CUP_B_UH60M_US;
+	class CUP_B_UH60M_US_import : CUP_B_UH60M_US { scope = 0; class EventHandlers; };
+	class ASE_B_Hkp16 : CUP_B_UH60M_US_import
+	{
+		scope = 0;
+		scopeCurator = 0;
+		vehicleClass = "ASE_B_Sweden_helicopters";
+		class EventHandlers: EventHandlers
+		{
+			init = "if (local (_this select 0)) then { [(_this select 0), """", [], false] call BIS_fnc_initVehicle; };";
+		};
+		class textureSources
+		{
+			class Green
+			{
+				displayName = "Green";
+				author = "SageNTitled of Arma Sweden";
+				textures[] = {
+					"Arma-Sweden-Extras\addons\ase_vehicles\data\Hkp16\fuselage.paa",
+					"Arma-Sweden-Extras\addons\ase_vehicles\data\Hkp16\engine.paa"
+				};
+				factions[] = { "ASE_B_Sweden" };
+			};
+		};
+	};
+	class ASE_B_Hkp16_SWE : ASE_B_Hkp16
+	{
+		scope = 2;
+		scopeCurator = 2;
+		displayName = "Hkp 16";
+		textureList[] = {
+			"Green", 1
+		};
+		side = 1;
+		faction = "ASE_B_Sweden";
+		editorSubcategory = "ASE_Eden_helicopters";
 	};
 };
