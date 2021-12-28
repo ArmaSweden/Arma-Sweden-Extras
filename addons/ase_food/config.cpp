@@ -24,7 +24,7 @@ class CfgWeapons
         displayName = "Bottle (Trokadero)";
         descriptionShort = "A bottle of Trokadero. Consume by 11.05.2022.";
         model = "Arma-Sweden-Extras\addons\ase_food\data\trokadero_bottle.p3d";
-        picture = "\Arma-Sweden-Extras\addons\ase_food\ui\trokadero.paa";
+        picture = "\Arma-Sweden-Extras\addons\ase_food\ui\picture_trokadero.paa";
 		class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 8;
         };
