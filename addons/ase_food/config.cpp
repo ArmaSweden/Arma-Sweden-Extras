@@ -78,6 +78,66 @@ class CfgWeapons
         acex_field_rations_consumeAnims[] = {};
         acex_field_rations_consumeSounds[] = {};
 	};
+
+    class ASE_PrincessCake : ACE_ItemCore
+	{
+		author = "SageNTitled of Arma Sweden";
+        scope = 2;
+        displayName = "Princess cake";
+        descriptionShort = "A traditional Swedish pastry.";
+        model = "Arma-Sweden-Extras\addons\ase_food\data\PrincessCake\princess_cake.p3d";
+        picture = "";
+		class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 12;
+        };
+		acex_field_rations_consumeTime = 10;
+        acex_field_rations_hungerSatiated = 15;
+        acex_field_rations_consumeText = "Eating princess cake...";
+        acex_field_rations_replacementItem = "ASE_PrincessCake_ThreeQuarters";
+	};
+    class ASE_PrincessCake_ThreeQuarters : ASE_PrincessCake
+	{
+		displayName = "Princess cake (3/4)";
+        descriptionShort = "A traditional Swedish pastry.";
+		// TODO: Add model/texture
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 10;
+        };
+        acex_field_rations_replacementItem = "ASE_PrincessCake_TwoQuarters";
+	};
+    class ASE_PrincessCake_TwoQuarters : ASE_PrincessCake
+	{
+		displayName = "Princess cake (2/4)";
+        descriptionShort = "A traditional Swedish pastry.";
+		// TODO: Add model/texture
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 8;
+        };
+        acex_field_rations_replacementItem = "ASE_PrincessCake_OneQuarter";
+	};
+    class ASE_PrincessCake_OneQuarters : ASE_PrincessCake
+	{
+		displayName = "Princess cake (1/4)";
+        descriptionShort = "A traditional Swedish pastry.";
+		// TODO: Add model/texture
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 6;
+        };
+        acex_field_rations_replacementItem = "ASE_PrincessCake_Empty";
+	};
+    class ASE_PrincessCake_Empty : ASE_PrincessCake
+	{
+		displayName = "Princess cake (empty)";
+        descriptionShort = "An empty plate.";
+		// TODO: Add model/texture of empty plate
+        class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 3;
+        };
+        acex_field_rations_consumeTime = -1;
+        acex_field_rations_hungerSatiated = -1;
+        acex_field_rations_consumeText = "";
+        acex_field_rations_replacementItem = "";
+	};
 };
 
 class CfgVehicles
@@ -134,6 +194,63 @@ class CfgVehicles
         class TransportItems {
             class _xx_ASE_TrokaderoBottle {
                 name = "ASE_TrokaderoBottle_Empty";
+                count = 1;
+            };
+        };
+	};
+
+    class ASE_PrincessCake_Item : Item_Base_F {
+		author = "SageNTitled of Arma Sweden";
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Princess cake";
+        vehicleClass = "Items";
+        // TODO: Add editor preview picture
+        class TransportItems {
+            class _xx_ASE_PrincessCake {
+                name = "ASE_PrincessCake";
+                count = 1;
+            };
+        };
+	};
+    class ASE_PrincessCake_ThreeQuarters_Item : Item_Base_F {
+		author = "SageNTitled of Arma Sweden";
+        scope = 1;
+        scopeCurator = 1;
+        displayName = "Princess cake (3/4)";
+        vehicleClass = "Items";
+        // TODO: Add editor preview picture
+        class TransportItems {
+            class _xx_ASE_PrincessCake {
+                name = "ASE_PrincessCake";
+                count = 1;
+            };
+        };
+	};
+    class ASE_PrincessCake_TwoQuarters_Item : Item_Base_F {
+		author = "SageNTitled of Arma Sweden";
+        scope = 1;
+        scopeCurator = 1;
+        displayName = "Princess cake (2/4)";
+        vehicleClass = "Items";
+        // TODO: Add editor preview picture
+        class TransportItems {
+            class _xx_ASE_PrincessCake {
+                name = "ASE_PrincessCake";
+                count = 1;
+            };
+        };
+	};
+    class ASE_PrincessCake_OneQuarter_Item : Item_Base_F {
+		author = "SageNTitled of Arma Sweden";
+        scope = 1;
+        scopeCurator = 1;
+        displayName = "Princess cake (1/4)";
+        vehicleClass = "Items";
+        // TODO: Add editor preview picture
+        class TransportItems {
+            class _xx_ASE_PrincessCake {
+                name = "ASE_PrincessCake";
                 count = 1;
             };
         };
