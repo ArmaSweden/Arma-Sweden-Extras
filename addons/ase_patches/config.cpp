@@ -2,11 +2,14 @@ class CfgPatches {
 
 	class ASE_patches
 	{
+		author = "Kingtiger45 of Arma Sweden";
+		name = "ASE Patches";
+		url = "https://www.armasweden.se/";
+		requiredAddons[] = {};
+		requiredVersion = 0.1;
 		units[] = {};
 		weapons[] = {};
-		requiredAddons[] = {};
 		version = "1.0.0";
-		author[]= {"Kingtiger45 of Arma Sweden"};
 	};
 
 };
