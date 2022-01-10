@@ -54,6 +54,7 @@ class CfgVehicles
 	class CUP_B_Leopard2A6_GER_import : CUP_B_Leopard2A6_GER { scope = 0; class EventHandlers; };
 	class ASE_B_Strv122 : CUP_B_Leopard2A6_GER_import
 	{
+		// TODO: Change to Swedish crew
 		scope = 0;
 		scopeCurator = 0;
 		vehicleClass = "ASE_B_Sweden_tanks";
@@ -120,6 +121,7 @@ class CfgVehicles
 	};
 	class ASE_B_Hkp16_SWE : ASE_B_Hkp16
 	{
+		// TODO: Change to Swedish crew
 		scope = 2;
 		scopeCurator = 2;
 		displayName = "Hkp 16";
