@@ -79,6 +79,32 @@ class CfgWeapons
         acex_field_rations_consumeSounds[] = {};
 	};
 
+    class ASE_TrokaderoCan : ACE_ItemCore
+	{
+		author = "SageNTitled of Arma Sweden";
+        scope = 2;
+        displayName = "Can (Trokadero)";
+        descriptionShort = "A can of Trokadero. Consume by 11.05.2022.";
+        model = "Arma-Sweden-Extras\addons\ase_food\data\TrokaderoCan\trokadero_can.p3d";
+        picture = "\Arma-Sweden-Extras\addons\ase_food\ui\picture_trokadero.paa";
+		class ItemInfo: CBA_MiscItem_ItemInfo {
+            mass = 3;
+        };
+		acex_field_rations_consumeTime = 10;
+        acex_field_rations_thirstQuenched = 5;
+        acex_field_rations_consumeText = "Drinking Trokadero...";
+        acex_field_rations_consumeAnims[] = {
+            "acex_field_rations_drinkStand",
+            "acex_field_rations_drinkCrouch",
+            "acex_field_rations_drinkProne"
+        };
+        acex_field_rations_consumeSounds[] = {
+            "acex_field_rations_drink1",
+            "acex_field_rations_drink1",
+            "acex_field_rations_drink2"
+        };
+	};
+
     class ASE_PrincessCake : ACE_ItemCore
 	{
 		author = "SageNTitled of Arma Sweden";
@@ -199,6 +225,23 @@ class CfgVehicles
         };
 	};
 
+    // TODO: Add as regular "thing" object for decoration
+	class ASE_TrokaderoCan_Item : Item_Base_F {
+		author = "SageNTitled of Arma Sweden";
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Can (Trokadero)";
+        vehicleClass = "Items";
+        // TODO: Add editor preview picture
+        class TransportItems {
+            class _xx_ASE_TrokaderoBottle {
+                name = "ASE_TrokaderoCan";
+                count = 1;
+            };
+        };
+	};
+
+    // TODO: Add as regular "thing" object for decoration
     class ASE_PrincessCake_Item : Item_Base_F {
 		author = "SageNTitled of Arma Sweden";
         scope = 2;
