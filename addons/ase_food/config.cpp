@@ -86,7 +86,7 @@ class CfgWeapons
         displayName = "Can (Trokadero)";
         descriptionShort = "A can of Trokadero. Consume by 11.05.2022.";
         model = "Arma-Sweden-Extras\addons\ase_food\data\TrokaderoCan\trokadero_can.p3d";
-        picture = "\Arma-Sweden-Extras\addons\ase_food\ui\picture_trokadero.paa";
+        picture = "\Arma-Sweden-Extras\addons\ase_food\ui\picture_trokadero_can.paa";
 		class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 3;
         };
@@ -112,7 +112,7 @@ class CfgWeapons
         displayName = "Princess cake";
         descriptionShort = "A traditional Swedish pastry.";
         model = "Arma-Sweden-Extras\addons\ase_food\data\PrincessCake\princess_cake.p3d";
-        picture = "";
+        picture = "\Arma-Sweden-Extras\addons\ase_food\ui\picture_princess_cake.paa";
 		class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 12;
         };
