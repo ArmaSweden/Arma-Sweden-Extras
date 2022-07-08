@@ -124,15 +124,15 @@ class CfgVehicles
 			{
 				property = "ASE_ModuleCheckpoint_RemovePrevious";
 				displayName = "Remove previous";
-				tooltip = "Remove previous checkpoints when this one is activated";
+				tooltip = "Remove previous checkpoints of the same side when this one is activated";
 				defaultValue = "true";
 			};
-			class ModuleDescription: ModuleDescription{}; // Module description should be shown last
+			class ModuleDescription: ModuleDescription{};
 		};
 		class ModuleDescription: ModuleDescription
 		{
 			description = "Creates a respawn point meant to be used as checkpoints when advancing in a scenario. Best used together with the Arma Sweden respawn templates.";
-			sync[] = {"LocationArea_F"}; // Array of synced entities (can contain base classes)
+			sync[] = {"LocationArea_F"}; // TODO: Remove?
 			position = 1;
 			direction = 0;
 			duplicate = 0;
