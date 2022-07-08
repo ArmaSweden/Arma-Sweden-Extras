@@ -51,7 +51,7 @@ class CfgVehicles
 	{
 		scope = 2;
 		displayName = "Checkpoint";
-		icon = ""; // TODO: Add checkpoint icon
+		icon = "Arma-Sweden-Extras\addons\ase_respawn\ui\icons\moduleCheckpoint.paa";
 		category = "Multiplayer";
 		function = "ASE_fnc_moduleCheckpoint";
 		functionPriority = 1;
@@ -65,9 +65,35 @@ class CfgVehicles
 
 		class Attributes: AttributesBase
 		{
-			class Units: Units
+			class Side: Combo
 			{
-				property = "ASE_ModuleCheckpoint_Units";
+				property = "ASE_ModuleCheckpoint_Side";
+				displayName = "Side";
+				description = "Units of which side will be respawned at the position";
+				class values
+				{
+					class BLUFOR
+					{
+						name = "BLUFOR";
+						value = 0;
+						default = 1;
+					};
+					class OPFOR
+					{
+						name = "OPFOR";
+						value = 1;
+					};
+					class Independent
+					{
+						name = "INDFOR";
+						value = 2;
+					};
+					class Civilian
+					{
+						name = "Civilian";
+						value = 3;
+					};
+				};
 			};
 			class Name: Edit
 			{
@@ -103,7 +129,7 @@ class CfgVehicles
 		// Module description. Must inherit from base class, otherwise pre-defined entities won't be available
 		class ModuleDescription: ModuleDescription
 		{
-			description = "Short module description";
+			description = "Creates a respawn point meant to be used as checkpoints throughout a scenario. Best used together with the checkpoint respawn template.";
 			sync[] = {"LocationArea_F"}; // Array of synced entities (can contain base classes)
 
 			class LocationArea_F
