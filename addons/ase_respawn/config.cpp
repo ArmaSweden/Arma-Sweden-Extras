@@ -49,11 +49,7 @@ class CfgVehicles
 			class ModuleDescription;	// Module description
 			class Units;				// Selection of units on which the module is applied
 		};
-		// Description base classes, for more information see below
-		class ModuleDescription
-		{
-			class AnyBrain;
-		};
+		class ModuleDescription;
 	};
 	class ASE_ModuleCheckpoint: Module_F
 	{
@@ -114,7 +110,7 @@ class CfgVehicles
 			{
 				property = "ASE_ModuleCheckpoint_Time";
 				displayName = "Active time";
-				tooltip = "Time until the respawn point is disabled again (unlimited if 0)";
+				tooltip = "Time in seconds that the respawn point will remain active (unlimited if 0)";
 				defaultValue = """0""";
 			};
 			class Notification: Checkbox
@@ -133,35 +129,13 @@ class CfgVehicles
 			};
 			class ModuleDescription: ModuleDescription{}; // Module description should be shown last
 		};
-
-		// Module description. Must inherit from base class, otherwise pre-defined entities won't be available
 		class ModuleDescription: ModuleDescription
 		{
-			description = "Creates a respawn point meant to be used as checkpoints when advancing in a scenario. Best used together with the Arma Sweden respawn template.";
+			description = "Creates a respawn point meant to be used as checkpoints when advancing in a scenario. Best used together with the Arma Sweden respawn templates.";
 			sync[] = {"LocationArea_F"}; // Array of synced entities (can contain base classes)
 			position = 1;
 			direction = 0;
 			duplicate = 0;
-
-			class LocationArea_F
-			{
-				description[] = { // Multi-line descriptions are supported
-					"First line",
-					"Second line"
-				};
-				position = 1; // Position is taken into effect
-				direction = 1; // Direction is taken into effect
-				optional = 1; // Synced entity is optional
-				duplicate = 1; // Multiple entities of this type can be synced
-				synced[] = {"BLUFORunit","AnyBrain"}; // Pre-define entities like "AnyBrain" can be used. See the list below
-			};
-			class BLUFORunit
-			{
-				description = "Short description";
-				displayName = "Any BLUFOR unit"; // Custom name
-				icon = "iconMan"; // Custom icon (can be file path or CfgVehicleIcons entry)
-				side = 1; // Custom side (will determine icon color)
-			};
 		};
 	};
 };
