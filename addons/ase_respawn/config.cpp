@@ -137,6 +137,9 @@ class CfgVehicles
 		{
 			description = "Creates a respawn point meant to be used as checkpoints when advancing in a scenario. Best used together with the Arma Sweden respawn template.";
 			sync[] = {"LocationArea_F"}; // Array of synced entities (can contain base classes)
+			position = 1;
+			direction = 0;
+			duplicate = 0;
 
 			class LocationArea_F
 			{
