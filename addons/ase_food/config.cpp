@@ -187,8 +187,8 @@ class CfgVehicles
 	};
 	class ASE_TrokaderoBottle_TwoThirds_Item : Item_Base_F {
 		author = "SageNTitled of Arma Sweden";
-        scope = 1;
-        scopeCurator = 1;
+        scope = 0;
+        scopeCurator = 0;
         displayName = "Bottle (Trokadero) (2/3)";
         vehicleClass = "Items";
         class TransportItems {
@@ -200,8 +200,8 @@ class CfgVehicles
 	};
     class ASE_TrokaderoBottle_OneThird_Item : Item_Base_F {
 		author = "SageNTitled of Arma Sweden";
-        scope = 1;
-        scopeCurator = 1;
+        scope = 0;
+        scopeCurator = 0;
         displayName = "Bottle (Trokadero) (1/3)";
         vehicleClass = "Items";
         class TransportItems {
@@ -213,8 +213,8 @@ class CfgVehicles
 	};
 	class ASE_TrokaderoBottle_Empty_Item : Item_Base_F {
 		author = "SageNTitled of Arma Sweden";
-        scope = 1;
-        scopeCurator = 1;
+        scope = 0;
+        scopeCurator = 0;
         displayName = "Bottle (Trokadero) (empty)";
         vehicleClass = "Items";
         class TransportItems {
@@ -258,8 +258,8 @@ class CfgVehicles
 	};
     class ASE_PrincessCake_ThreeQuarters_Item : Item_Base_F {
 		author = "SageNTitled of Arma Sweden";
-        scope = 1;
-        scopeCurator = 1;
+        scope = 0;
+        scopeCurator = 0;
         displayName = "Princess cake (3/4)";
         vehicleClass = "Items";
         // TODO: Add editor preview picture
@@ -272,8 +272,8 @@ class CfgVehicles
 	};
     class ASE_PrincessCake_TwoQuarters_Item : Item_Base_F {
 		author = "SageNTitled of Arma Sweden";
-        scope = 1;
-        scopeCurator = 1;
+        scope = 0;
+        scopeCurator = 0;
         displayName = "Princess cake (2/4)";
         vehicleClass = "Items";
         // TODO: Add editor preview picture
@@ -286,8 +286,8 @@ class CfgVehicles
 	};
     class ASE_PrincessCake_OneQuarter_Item : Item_Base_F {
 		author = "SageNTitled of Arma Sweden";
-        scope = 1;
-        scopeCurator = 1;
+        scope = 0;
+        scopeCurator = 0;
         displayName = "Princess cake (1/4)";
         vehicleClass = "Items";
         // TODO: Add editor preview picture
