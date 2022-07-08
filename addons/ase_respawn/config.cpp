@@ -23,6 +23,12 @@ class CfgFunctions
             file = "Arma-Sweden-Extras\addons\ase_respawn\functions\modules";
             class module_checkpoint {};
         };
+		class Templates
+		{
+			file = "Arma-Sweden-Extras\addons\ase_respawn\functions\templates";
+			class respawnTemplate_respawn {};
+			class respawnTemplate_killed {};
+		};
     };
 };
 
@@ -152,5 +158,17 @@ class CfgVehicles
 				side = 1; // Custom side (will determine icon color)
 			};
 		};
+	};
+};
+
+class CfgRespawnTemplates
+{
+	class ASE_respawn
+	{
+		displayName = "ASE Respawn";
+		onPlayerKilled = "Arma-Sweden-Extras\addons\ase_respawn\functions\templates\fn_respawnTemplate_killed.sqf";
+		onPlayerRespawn = "Arma-Sweden-Extras\addons\ase_respawn\functions\templates\fn_respawnTemplate_respawn.sqf";
+		respawnTypes[] = {3};
+		respawnOnStart = 0;
 	};
 };

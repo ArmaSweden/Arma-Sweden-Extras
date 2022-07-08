@@ -1,0 +1,1 @@
+systemChat "respawn template (respawn) triggered";
