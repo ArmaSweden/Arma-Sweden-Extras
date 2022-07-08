@@ -26,8 +26,10 @@ class CfgFunctions
 		class Templates
 		{
 			file = "Arma-Sweden-Extras\addons\ase_respawn\functions\templates";
-			class respawnTemplate_respawn {};
-			class respawnTemplate_killed {};
+			class respawnTemplate_positionKilled {};
+			class respawnTemplate_positionRespawn {};
+			class respawnTemplate_spectatorKilled {};
+			class respawnTemplate_spectatorRespawn {};
 		};
     };
 };
@@ -166,12 +168,18 @@ class CfgVehicles
 
 class CfgRespawnTemplates
 {
-	class ASE_respawn
+	class ASE_position
 	{
-		displayName = "ASE Respawn";
-		onPlayerKilled = "Arma-Sweden-Extras\addons\ase_respawn\functions\templates\fn_respawnTemplate_killed.sqf";
-		onPlayerRespawn = "Arma-Sweden-Extras\addons\ase_respawn\functions\templates\fn_respawnTemplate_respawn.sqf";
+		displayName = "ASE Position";
+		onPlayerKilled = "Arma-Sweden-Extras\addons\ase_respawn\functions\templates\fn_respawnTemplate_positionKilled.sqf";
+		onPlayerRespawn = "Arma-Sweden-Extras\addons\ase_respawn\functions\templates\fn_respawnTemplate_positionRespawn.sqf";
 		respawnTypes[] = {3};
-		respawnOnStart = 0;
+	};
+	class ASE_spectator
+	{
+		displayName = "ASE Spectator";
+		onPlayerKilled = "Arma-Sweden-Extras\addons\ase_respawn\functions\templates\fn_respawnTemplate_spectatorKilled.sqf";
+		onPlayerRespawn = "Arma-Sweden-Extras\addons\ase_respawn\functions\templates\fn_respawnTemplate_spectatorRespawn.sqf";
+		respawnTypes[] = {3};
 	};
 };
