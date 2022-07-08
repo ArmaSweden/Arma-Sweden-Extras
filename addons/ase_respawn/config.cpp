@@ -14,14 +14,14 @@ class CfgPatches
 
 class CfgFunctions
 {
-    class ASE
+    class ASE_respawn
     {
         tag = "ASE";
 
         class Modules
         {
             file = "Arma-Sweden-Extras\addons\ase_respawn\functions\modules";
-            class moduleCheckpoint {};
+            class module_checkpoint {};
         };
     };
 };
@@ -53,7 +53,7 @@ class CfgVehicles
 		displayName = "Checkpoint";
 		icon = "Arma-Sweden-Extras\addons\ase_respawn\ui\icons\moduleCheckpoint.paa";
 		category = "Multiplayer";
-		function = "ASE_fnc_moduleCheckpoint";
+		function = "ASE_fnc_module_checkpoint";
 		functionPriority = 1;
 		isGlobal = 1;
 		isTriggerActivated = 1;
@@ -72,18 +72,18 @@ class CfgVehicles
 				description = "Units of which side will be respawned at the position";
 				class values
 				{
-					class BLUFOR
+					class Blufor
 					{
 						name = "BLUFOR";
 						value = 0;
 						default = 1;
 					};
-					class OPFOR
+					class Opfor
 					{
 						name = "OPFOR";
 						value = 1;
 					};
-					class Independent
+					class Indfor
 					{
 						name = "INDFOR";
 						value = 2;
