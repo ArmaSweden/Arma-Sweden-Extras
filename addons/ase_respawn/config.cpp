@@ -135,7 +135,7 @@ class CfgVehicles
 		// Module description. Must inherit from base class, otherwise pre-defined entities won't be available
 		class ModuleDescription: ModuleDescription
 		{
-			description = "Creates a respawn point meant to be used as checkpoints throughout a scenario. Best used together with the checkpoint respawn template.";
+			description = "Creates a respawn point meant to be used as checkpoints when advancing in a scenario. Best used together with the Arma Sweden respawn template.";
 			sync[] = {"LocationArea_F"}; // Array of synced entities (can contain base classes)
 
 			class LocationArea_F
