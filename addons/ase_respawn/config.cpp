@@ -172,6 +172,7 @@ class CfgRespawnTemplates
 	};
 };
 
+#include "defines.hpp"
 #include "RscRespawnMap.hpp"
 #include "RscRespawnMarker.hpp"
 #include "RscRespawnPrompt.hpp"
