@@ -1,1 +1,1 @@
-systemChat "respawn template (respawn) triggered";
+[player, localNamespace getVariable "ASE_selectedRespawnPoint"] call BIS_fnc_moveToRespawnPosition;
