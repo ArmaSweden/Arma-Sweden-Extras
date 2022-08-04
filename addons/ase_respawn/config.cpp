@@ -31,6 +31,20 @@ class CfgFunctions
 			class respawnTemplate_spectatorKilled {};
 			class respawnTemplate_spectatorRespawn {};
 		};
+		class Respawn
+		{
+			class openRespawnMap {};
+            class closeRespawnMap {};
+			class openSpectator {};
+			class ctrlRespawnMarkerIconMouseEnter {};
+			class ctrlRespawnMarkerIconMouseExit {};
+			class ctrlRespawnMarkerIconMouseButtonClick {};
+			class ctrlExpandRespawnMarkerTooltip {};
+			class updateRespawnMarkers {};
+			class getRespawnPosition {};
+			class getRespawnName {};
+			class ctrlSetRespawnMarkerName {};
+		};
     };
 };
 
@@ -157,3 +171,7 @@ class CfgRespawnTemplates
 		respawnTypes[] = {3};
 	};
 };
+
+#include "RscRespawnMap.hpp"
+#include "RscRespawnMarker.hpp"
+#include "RscRespawnPrompt.hpp"

@@ -1,0 +1,2 @@
+#define COLOR_BACKGROUND {0, 0, 0, 0.7}
+#define COLOR_BACKGROUND_HOVER {0, 0, 0, 1}
