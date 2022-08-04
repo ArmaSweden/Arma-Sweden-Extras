@@ -5,7 +5,7 @@ class CfgPatches
 		author = "SageNTitled of Arma Sweden";
 		name = "ASE Respawn";
 		url = "https://www.armasweden.se/";
-		requiredAddons[] = {"A3_Modules_F"};
+		requiredAddons[] = {"A3_ui_f", "A3_Modules_F"};
 		requiredVersion = 0.1;
 		units[] = {"ASE_ModuleCheckpoint"};
 		weapons[] = {};
