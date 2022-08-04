@@ -19,6 +19,7 @@ class CfgFunctions
 		};
 		class Respawn
 		{
+			file = "Arma-Sweden-Extras\addons\ase_respawn\functions\respawn";
 			class openRespawnMap {};
             class closeRespawnMap {};
 			class openSpectator {};
