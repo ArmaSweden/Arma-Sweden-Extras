@@ -1,5 +1,6 @@
 // TODO: Show inactive checkpoints
 // TODO: Show respawn time if "Show respawn counter" is enabled
+// TODO: Remove map markers under respawn markers
 
 if (!hasInterface) exitWith {};
 

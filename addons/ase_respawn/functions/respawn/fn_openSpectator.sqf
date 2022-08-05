@@ -15,16 +15,18 @@ params ["_side"];
 	if ("ASE_position" in getMissionConfigValue ["respawnTemplates", []]) then {
 		// Wait until spectator display is created
 		waitUntil { findDisplay 60492 != displayNull };
-		sleep 0.1;
+		sleep 0.1; // Required, as display still doesn't exist yet for some reason
 		_spectatorDisplay = findDisplay 60492;
 		_spectatorDisplay displayAddEventHandler ["KeyDown", {
 			params ["_display", "_key", "_shift", "_ctrl", "_alt"];
+
 			// Open respawn map when pressing M
 			if (_key == 50) then {
 				[] spawn {
 					[] call ASE_fnc_openRespawnMap;
 				};
 			};
+
 			// Open escape menu
 			if (_key == 1) then {
 				[] spawn {
