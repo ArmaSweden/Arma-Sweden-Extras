@@ -1,4 +1,5 @@
 // TODO: Initialize with same settings since last spectator session
+// TODO: Show respawn time if "Show respawn counter" is enabled
 
 if (!hasInterface) exitWith {};
 waitUntil { !isNil { player } && { !isNull player } };

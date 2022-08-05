@@ -1,5 +1,5 @@
 // TODO: Show inactive checkpoints
-// TODO: Set ASE_selectedRespawnPoint when marker is clicked
+// TODO: Show respawn time if "Show respawn counter" is enabled
 
 if (!hasInterface) exitWith {};
 

@@ -1,3 +1,5 @@
+// TODO: List incompatible templates
+
 params ["_oldUnit", "_killer", "_respawn", "_respawnDelay"];
 
 localNamespace setVariable ["ASE_isReadyToRespawn", false];
