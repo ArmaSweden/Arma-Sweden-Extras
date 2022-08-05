@@ -11,8 +11,6 @@ if (!hasInterface) exitWith {};
 #define MAP_MAX_ZOOM 0
 
 // TODO: Move to localNamespace
-ASE_isDraggingMap = false;
-ASE_mapDragCursorLastPosition = [];
 ASE_respawnPoints = [];
 ASE_respawnMarkers = [];
 
