@@ -17,4 +17,9 @@ switch (typeName _respawnPoint) do {
 	};
 };
 
+// TODO: Get name and direction from closest landmark
+if (_name == "") then {
+	_name = "Respawn point";
+};
+
 _name
