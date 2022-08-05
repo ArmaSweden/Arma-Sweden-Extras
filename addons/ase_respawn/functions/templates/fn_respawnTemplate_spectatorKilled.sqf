@@ -1,9 +1,10 @@
 // TODO: List incompatible templates
 
-
 params ["_oldUnit", "_killer", "_respawn", "_respawnDelay"];
 
 if (_respawnDelay < 5) exitWith {};
+
+setPlayerRespawnTime _respawnDelay;
 
 private _side = side group _oldUnit;
 

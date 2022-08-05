@@ -5,6 +5,8 @@ params ["_oldUnit", "_killer", "_respawn", "_respawnDelay"];
 localNamespace setVariable ["ASE_isReadyToRespawn", false];
 localNamespace setVariable ["ASE_selectedRespawnPoint", objNull];
 
+setPlayerRespawnTime _respawnDelay;
+
 if (!("ASE_spectator" in getMissionConfigValue ["respawnTemplates", []])) then {
 	sleep 2;
 	cutText ["", "BLACK OUT", 0.25];
