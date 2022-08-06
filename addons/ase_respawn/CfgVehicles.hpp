@@ -95,7 +95,7 @@ class CfgVehicles
 		};
 		class ModuleDescription: ModuleDescription
 		{
-			description = "Creates a respawn point meant to be used as checkpoints when advancing in a scenario. Best used together with the Arma Sweden respawn templates.";
+			description = "Creates a respawn point meant to be used as checkpoints when advancing in a scenario. Best used together with the ASE Position respawn template.";
 			sync[] = {"LocationArea_F"}; // TODO: Remove?
 			position = 1;
 			direction = 0;
