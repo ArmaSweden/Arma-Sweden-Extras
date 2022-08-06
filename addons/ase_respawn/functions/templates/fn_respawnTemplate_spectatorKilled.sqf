@@ -16,7 +16,7 @@ cutText ["","BLACK IN"];
 
 waitUntil { playerRespawnTime <= 0 };
 
-// Fade out if respawn position is not enabled
+// Fade out if ASE Position template is not enabled
 if (!("ASE_position" in getMissionConfigValue ["respawnTemplates", []])) then {
 	cutText ["","BLACK OUT", 0.25];
 	sleep 1;

@@ -45,6 +45,7 @@ ASE_respawnMarkers = [];
 				[] spawn {
 					// TODO: Add black background
 					// TODO: Add event handler to reopen respawn map
+					// TODO: This menu has "load" instead of "respawn" (probably singleplayer escape menu)
 					(call BIS_fnc_displayMission) createDisplay "RscDisplayInterrupt";
 				};
 			};
