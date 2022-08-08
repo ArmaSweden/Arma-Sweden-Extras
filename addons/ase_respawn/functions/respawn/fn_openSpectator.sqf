@@ -11,7 +11,14 @@ params ["_side"];
 [_side] spawn {
 	params ["_side"];
 
-	["Initialize", [player, _side, false, false, true, true, true, false, false, true]] call BIS_fnc_EGSpectator;
+	// Open EG Spectator
+	if (["IsInitialized"] call BIS_fnc_EGSpectator) then {
+		if ((["GetDisplay"] call BIS_fnc_EGSpectator) isEqualTo displayNull) then {
+			["CreateDisplay"] call BIS_fnc_EGSpectator;
+		};
+	} else {
+		["Initialize", [player, _side, false, false, true, true, true, false, false, true]] call BIS_fnc_EGSpectator;
+	};
 
 	if ("ASE_position" in getMissionConfigValue ["respawnTemplates", []]) then {
 		// Wait until spectator display is created
@@ -21,21 +28,28 @@ params ["_side"];
 		_spectatorDisplay displayAddEventHandler ["KeyDown", {
 			params ["_display", "_key", "_shift", "_ctrl", "_alt"];
 
+			_return = false;
+
 			// Open respawn map when pressing M
 			if (_key == 50) then {
 				[] spawn {
 					[] call ASE_fnc_openRespawnMap;
 				};
+				_return = true;
 			};
 
-			// Open escape menu
+			// TODO: Maybe not needed after respawn map fix (closing only spectator controls instead of reinitializing spectator)
+			// Don't open escape menu if respawn map is open
+			// Prevents visual glitch when closing respawn map with esc
 			if (_key == 1) then {
-				[] spawn {
-					// TODO: Add event handler to reopen spectator
-					(call BIS_fnc_displayMission) createDisplay "RscDisplayInterrupt";
+
+				if (findDisplay 182600 isNotEqualTo displayNull) then {
+					_return = true;
 				};
+
 			};
-			true
+
+			_return
 		}];
 
 		// Create respawn button

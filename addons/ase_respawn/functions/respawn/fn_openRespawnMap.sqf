@@ -1,6 +1,7 @@
 // TODO: Show inactive checkpoints
 // TODO: Show respawn time if "Show respawn counter" is enabled
 // TODO: Remove map markers under respawn markers
+// TODO: Change keycodes to function bindings
 
 if (!hasInterface) exitWith {};
 
@@ -19,7 +20,7 @@ ASE_respawnMarkers = [];
 	_mapDisplay = (call BIS_fnc_displayMission) createDisplay "RscRespawnMapDisplay";
 	_mapCtrl = _mapDisplay displayCtrl 182602;
 
-	["Terminate"] call BIS_fnc_EGSpectator;
+	["DestroyDisplay"] call BIS_fnc_EGSpectator;
 
 	if ("ASE_spectator" in getMissionConfigValue ["respawnTemplates", []]) then {
 		// Open spectator when map is closed and if spectator respawn template is used
@@ -39,20 +40,26 @@ ASE_respawnMarkers = [];
 		}];
 	} else {
 		_mapDisplay displayAddEventHandler ["KeyDown", {
+			
 			params ["_display", "_key", "_shift", "_ctrl", "_alt"];
-			// Prevent closing display (open escape menu instead)
+			
+			// Open escape menu
 			if (_key == 1) then {
 				[] spawn {
 					// TODO: Add black background
-					// TODO: Add event handler to reopen respawn map
-					// TODO: This menu has "load" instead of "respawn" (probably singleplayer escape menu)
-					(call BIS_fnc_displayMission) createDisplay "RscDisplayInterrupt";
+					_escapeMenuDisplay = (call BIS_fnc_displayMission) createDisplay "RscDisplayMPInterrupt";
+					_escapeMenuDisplay displayAddEventHandler ["Unload", {
+						// TODO: Check if player has already respawned
+						call ASE_fnc_openRespawnMap;
+					}];
 				};
 			};
+
 			// Prevent opening map
 			if (_key == 50) then {
 				true
 			};
+			
 		}];
 	};
 

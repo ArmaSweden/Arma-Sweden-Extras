@@ -21,5 +21,5 @@ if (("ASE_position" in getMissionConfigValue ["respawnTemplates", []])) exitWith
 
 cutText ["","BLACK OUT", 0.25];
 sleep 1;
-["Terminate"] call BIS_fnc_EGSpectator;
+["Terminate"] call BIS_fnc_EGSpectator; // TODO: Create function to close ASE spectator
 cutText ["","BLACK IN"];
