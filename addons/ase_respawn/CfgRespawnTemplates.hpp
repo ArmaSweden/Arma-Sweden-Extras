@@ -12,6 +12,6 @@ class CfgRespawnTemplates
 		displayName = "ASE Spectator";
 		onPlayerKilled = "Arma-Sweden-Extras\addons\ase_respawn\functions\templates\fn_respawnTemplate_spectatorKilled.sqf";
 		onPlayerRespawn = "Arma-Sweden-Extras\addons\ase_respawn\functions\templates\fn_respawnTemplate_spectatorRespawn.sqf";
-		respawnTypes[] = {3};
+		respawnTypes[] = {1, 2, 3, 4, 5};
 	};
 };
