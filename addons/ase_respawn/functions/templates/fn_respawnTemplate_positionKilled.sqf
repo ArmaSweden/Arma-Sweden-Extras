@@ -20,6 +20,7 @@ waitUntil { playerRespawnTime <= 0 };
 localNamespace setVariable ["ASE_isReadyToRespawn", true];
 setPlayerRespawnTime 99999;
 
+// TODO: Check if respawn point still exists
 waitUntil { !((localNamespace getVariable ["ASE_selectedRespawnPoint", objNull]) isEqualTo objNull) };
 
 setPlayerRespawnTime 0;

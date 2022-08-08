@@ -1,5 +1,6 @@
 // TODO: Initialize with same settings since last spectator session
 // TODO: Show respawn time if "Show respawn counter" is enabled
+// TODO: Spectate everyone when mission has no respawn, or tickets have run out
 
 if (!hasInterface) exitWith {};
 waitUntil { !isNil { player } && { !isNull player } };
