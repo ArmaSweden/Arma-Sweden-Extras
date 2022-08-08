@@ -23,6 +23,9 @@ setPlayerRespawnTime 99999;
 // TODO: Check if respawn point still exists
 waitUntil { !((localNamespace getVariable ["ASE_selectedRespawnPoint", objNull]) isEqualTo objNull) };
 
+if ("ASE_spectator" in getMissionConfigValue ["respawnTemplates", []]) then {
+	["Terminate"] call BIS_fnc_EGSpectator;
+};
 setPlayerRespawnTime 0;
 // TODO: Fade out to black maybe
 call ASE_fnc_closeRespawnMap;

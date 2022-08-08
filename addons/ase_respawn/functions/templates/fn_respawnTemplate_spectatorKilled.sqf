@@ -16,10 +16,10 @@ cutText ["","BLACK IN"];
 
 waitUntil { playerRespawnTime <= 0 };
 
-// Fade out if ASE Position template is not enabled
-if (!("ASE_position" in getMissionConfigValue ["respawnTemplates", []])) then {
-	cutText ["","BLACK OUT", 0.25];
-	sleep 1;
-	["Terminate"] call BIS_fnc_EGSpectator;
-	cutText ["","BLACK IN"];
-};
+// Hand over responsibility to ASE Position template
+if (("ASE_position" in getMissionConfigValue ["respawnTemplates", []])) exitWith {};
+
+cutText ["","BLACK OUT", 0.25];
+sleep 1;
+["Terminate"] call BIS_fnc_EGSpectator;
+cutText ["","BLACK IN"];
