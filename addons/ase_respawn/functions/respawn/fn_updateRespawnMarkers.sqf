@@ -17,6 +17,9 @@ if (count ASE_respawnPoints > 0) then {
 		ctrlDelete (ASE_respawnMarkers select 0);
 		ASE_respawnMarkers deleteAt _forEachIndex;
 		ASE_respawnPoints deleteAt _forEachIndex;
+		if (_x isEqualTo (localNamespace getVariable ["ASE_selectedRespawnPoint", objNull])) then {
+			localNamespace setVariable ["ASE_selectedRespawnPoint", objNull];
+		};
 	};
 } forEach ASE_respawnPoints;
 

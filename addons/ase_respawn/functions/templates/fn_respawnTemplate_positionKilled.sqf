@@ -20,8 +20,7 @@ waitUntil { playerRespawnTime <= 0 };
 localNamespace setVariable ["ASE_isReadyToRespawn", true];
 setPlayerRespawnTime 99999;
 
-// TODO: Check if respawn point still exists
-waitUntil { !((localNamespace getVariable ["ASE_selectedRespawnPoint", objNull]) isEqualTo objNull) };
+waitUntil { (localNamespace getVariable ["ASE_selectedRespawnPoint", objNull]) isNotEqualTo objNull };
 
 if ("ASE_spectator" in getMissionConfigValue ["respawnTemplates", []]) then {
 	["Terminate"] call BIS_fnc_EGSpectator;
