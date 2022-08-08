@@ -38,6 +38,7 @@ class CfgVehicles
 				property = "ASE_ModuleCheckpoint_Side";
 				displayName = "Side";
 				description = "Units of which side will be respawned at the position";
+				typeName = "NUMBER";
 				class values
 				{
 					class Blufor
