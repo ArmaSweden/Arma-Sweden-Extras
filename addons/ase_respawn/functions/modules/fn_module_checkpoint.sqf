@@ -33,8 +33,7 @@ if (_activated) then {
 	
 	// Create map marker
 	_marker = "";
-	systemChat _side;
-	switch (parseNumber _side) do {
+	switch (_side) do {
 		case 0: {
 			_marker = createMarkerLocal [format ["respawn_west %1", _logic], getPos _logic];
 			_marker setMarkerColorLocal "ColorWEST";
