@@ -80,8 +80,8 @@ class CfgVehicles
 			class Notification: Checkbox
 			{
 				property = "ASE_ModuleCheckpoint_Notification";
-				displayName = "Display notification";
-				tooltip = "Display a notification to units when respawn is activated";
+				displayName = "Show notification";
+				tooltip = "Shows a notification to units when respawn is activated";
 				defaultValue = "false";
 			};
 			class RemovePrevious: Checkbox
