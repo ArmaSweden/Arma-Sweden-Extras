@@ -3,7 +3,7 @@
 [
 	"ASE_setting_respawn_enableUnconsciousSpectator",
 	"CHECKBOX",
-	["Enable spectator when unconscious", "Throws player into spectator mode when unconscious."],
+	["Spectate when unconscious", "Throws player into spectator mode when unconscious."],
 	["ASE Respawn", "Spectating when unconscious"],
 	false
 ] call CBA_fnc_addSetting;
