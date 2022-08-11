@@ -1,3 +1,5 @@
+// TODO: Mark if settings require restart
+
 [
 	"ASE_setting_markerTools_enabled",
 	"CHECKBOX",
