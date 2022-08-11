@@ -5,5 +5,5 @@
 	"CHECKBOX",
 	["Judo mode", "Tapping someone's shoulder causes them to ragdoll."],
 	["ASE Lmao"],
-	true
+	false
 ] call CBA_fnc_addSetting;
