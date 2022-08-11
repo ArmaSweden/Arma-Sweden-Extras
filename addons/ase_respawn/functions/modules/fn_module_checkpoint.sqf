@@ -56,6 +56,7 @@ if (_activated) then {
 	_marker setMarkerTextLocal _name;
 	_logic setVariable ["marker", _marker];
 
+	// TODO: Show only to the players in _side
 	// Show notification
 	if (_showNotification) then {
 		["RespawnAdded", ["Respawn Available", "A checkpoint was activated", "Arma-Sweden-Extras\addons\ase_respawn\ui\icons\moduleCheckpoint.paa"]] call bis_fnc_shownotification;
