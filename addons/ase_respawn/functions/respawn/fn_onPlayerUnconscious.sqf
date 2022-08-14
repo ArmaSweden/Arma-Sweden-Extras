@@ -1,5 +1,7 @@
 params ["_unit", "_state"];
 
+if (_unit != player) exitWith {};
+
 if (_state) then {
 
 	[] spawn {
