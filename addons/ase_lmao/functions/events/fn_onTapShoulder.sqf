@@ -1,3 +1,5 @@
+// TODO: Make it work on AI too
+
 params ["_target", "_shoulderNum"];
 
 // Credit for ragdoll script: KillzoneKid
