@@ -31,7 +31,7 @@ class CfgFunctions
 			class getRespawnPosition {};
 			class getRespawnName {};
 			class ctrlSetRespawnMarkerName {};
-			class onPlayerUnconscious {};
+			class initUnconsciousSpectator {};
 		};
     };
 };
