@@ -1,12 +1,14 @@
 // TODO: Add settings for respawn templates
-// TODO: Mark if settings require restart
 
 [
 	"ASE_setting_respawn_enableUnconsciousSpectator",
 	"CHECKBOX",
 	["Spectate when unconscious", "Throws player into spectator mode when unconscious."],
 	["ASE Respawn", "Spectating when unconscious"],
-	false
+	false,
+	nil,
+	{},
+	true
 ] call CBA_fnc_addSetting;
 
 /*
