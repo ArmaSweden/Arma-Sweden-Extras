@@ -6,6 +6,10 @@ if (_state) then {
 
 	[] spawn {
 
+		// Disable ACE screen effects
+		ppEffectDestroy ace_medical_feedback_ppUnconsciousBlackout;
+		ppEffectDestroy ace_medical_feedback_ppUnconsciousBlur;
+
 		// Flag in case player changes unconscious state multiple times in succession
 		localNamespace setVariable ["ASE_isBootingUnconsciousSpectator", true];
 
@@ -17,7 +21,6 @@ if (_state) then {
 		missionNamespace setVariable ["BIS_EGSpectator_whitelistedSides", objNull];
 		uiNamespace setVariable ["RscEGSpectator_focus", player];
 		["SetCameraMode", ["follow"]] call BIS_fnc_EGSpectatorCamera;
-		// TODO: Remove ACE effects
 		cutText ["","BLACK IN"];
 
 		localNamespace setVariable ["ASE_isBootingUnconsciousSpectator", false];
