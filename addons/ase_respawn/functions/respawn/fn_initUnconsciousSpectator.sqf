@@ -6,13 +6,21 @@ if (_state) then {
 
 	[] spawn {
 
-		localNamespace setVariable ["ASE_isBootingUnconsciousSpectatorCamera", true];
+		// Flag in case player changes unconscious state multiple times in succession
+		localNamespace setVariable ["ASE_isBootingUnconsciousSpectator", true];
+
 		sleep 4;
 		cutText ["", "BLACK OUT", 0.25];
 		sleep 1;
-		["Initialize", [player, [], false, false, true, false, false, false, false, false]] call BIS_fnc_EGSpectator;
+		["Initialize", [player, [objNull], false, false, true, false, false, false, false, false]] call BIS_fnc_EGSpectator;
+		sleep 0.5;
+		missionNamespace setVariable ["BIS_EGSpectator_whitelistedSides", objNull];
+		uiNamespace setVariable ["RscEGSpectator_focus", player];
+		["SetCameraMode", ["follow"]] call BIS_fnc_EGSpectatorCamera;
+		// TODO: Remove ACE effects
 		cutText ["","BLACK IN"];
-		localNamespace setVariable ["ASE_isBootingUnconsciousSpectatorCamera", false];
+		
+		localNamespace setVariable ["ASE_isBootingUnconsciousSpectator", false];
 
 	};
 
@@ -20,7 +28,7 @@ if (_state) then {
 
 	[] spawn {
 
-		waitUntil { !(localNamespace getVariable ["ASE_isBootingUnconsciousSpectatorCamera", false]) };
+		waitUntil { !(localNamespace getVariable ["ASE_isBootingUnconsciousSpectator", false]) };
 
 		cutText ["", "BLACK OUT", 0.25];
 		sleep 0.25;
