@@ -19,22 +19,13 @@ if (_state) then {
 		["SetCameraMode", ["follow"]] call BIS_fnc_EGSpectatorCamera;
 		// TODO: Remove ACE effects
 		cutText ["","BLACK IN"];
-		
+
 		localNamespace setVariable ["ASE_isBootingUnconsciousSpectator", false];
 
 	};
 
 } else {
 
-	[] spawn {
-
-		waitUntil { !(localNamespace getVariable ["ASE_isBootingUnconsciousSpectator", false]) };
-
-		cutText ["", "BLACK OUT", 0.25];
-		sleep 0.25;
-		["Terminate"] call BIS_fnc_EGSpectator;
-		cutText ["","BLACK IN", 0.25];
-
-	};
+	call ASE_fnc_closeUnconsciousSpectator;
 
 };

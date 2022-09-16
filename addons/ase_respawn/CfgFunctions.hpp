@@ -32,6 +32,7 @@ class CfgFunctions
 			class getRespawnName {};
 			class ctrlSetRespawnMarkerName {};
 			class initUnconsciousSpectator {};
+			class closeUnconsciousSpectator {};
 		};
     };
 };
