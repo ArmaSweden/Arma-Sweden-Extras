@@ -16,11 +16,25 @@ if (_state) then {
 		sleep 4;
 		cutText ["", "BLACK OUT", 0.25];
 		sleep 1;
-		["Initialize", [player, [objNull], false, false, true, false, false, false, false, false]] call BIS_fnc_EGSpectator;
+
+		_side = [objNull];
+		switch (ASE_setting_respawn_unconsciousSpectatorList) do {
+			case 1: { _side = [side group player] };
+			case 2: { _side = [] };
+		};
+
+		// TODO: Show unit list if player is allowed so spectate other units
+		["Initialize", [player, _side, ASE_setting_respawn_enableUnconsciousSpectateAI, false, true, false, false, false, false, false]] call BIS_fnc_EGSpectator;
+
 		sleep 0.5;
-		missionNamespace setVariable ["BIS_EGSpectator_whitelistedSides", objNull];
-		uiNamespace setVariable ["RscEGSpectator_focus", player];
-		["SetCameraMode", ["follow"]] call BIS_fnc_EGSpectatorCamera;
+
+		// Force spectate player's unconscious body
+		if (ASE_setting_respawn_unconsciousSpectatorList isEqualTo 0) then {
+			missionNamespace setVariable ["BIS_EGSpectator_whitelistedSides", objNull];
+			uiNamespace setVariable ["RscEGSpectator_focus", player];
+			["SetCameraMode", ["follow"]] call BIS_fnc_EGSpectatorCamera;
+		};
+
 		cutText ["","BLACK IN"];
 
 		localNamespace setVariable ["ASE_isBootingUnconsciousSpectator", false];
