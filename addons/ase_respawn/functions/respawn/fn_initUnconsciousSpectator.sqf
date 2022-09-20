@@ -36,7 +36,7 @@ if (_state) then {
 
 		// Force spectate player's unconscious body
 		if (ASE_setting_respawn_unconsciousSpectatorList isEqualTo 0) then {
-			missionNamespace setVariable ["BIS_EGSpectator_whitelistedSides", objNull];
+			missionNamespace setVariable ["BIS_EGSpectator_whitelistedSides", [objNull]];
 			uiNamespace setVariable ["RscEGSpectator_focus", player];
 			["SetCameraMode", ["follow"]] call BIS_fnc_EGSpectatorCamera;
 		};
