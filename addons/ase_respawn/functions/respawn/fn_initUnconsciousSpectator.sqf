@@ -18,13 +18,19 @@ if (_state) then {
 		sleep 1;
 
 		_side = [objNull];
+		_canSpectateOthers = false;
 		switch (ASE_setting_respawn_unconsciousSpectatorList) do {
-			case 1: { _side = [side group player] };
-			case 2: { _side = [] };
+			case 1: {
+				_side = [side group player];
+				_canSpectateOthers = true;
+			};
+			case 2: {
+				_side = [];
+				_canSpectateOthers = true;
+			};
 		};
 
-		// TODO: Show unit list if player is allowed so spectate other units
-		["Initialize", [player, _side, ASE_setting_respawn_enableUnconsciousSpectateAI, false, true, false, false, false, false, false]] call BIS_fnc_EGSpectator;
+		["Initialize", [player, _side, ASE_setting_respawn_enableUnconsciousSpectateAI, false, true, false, false, false, false, _canSpectateOthers]] call BIS_fnc_EGSpectator;
 
 		sleep 0.5;
 
