@@ -81,6 +81,17 @@
 	false
 ] call CBA_fnc_addSetting;
 
+[
+	"ASE_setting_markerTools_restrictPlacementBeforeStart",
+	"CHECKBOX",
+	["Restrictions apply in planning phase", "Markers are restricted in the planning map screen, before the game starts."],
+	["ASE Marker Tools", "Marker placement restrictions"],
+	false,
+	nil,
+	{},
+	true
+] call CBA_fnc_addSetting;
+
 // Trigger on planning phase
 [] spawn {
 
@@ -89,11 +100,14 @@
 	};
 
 	if (!isNull findDisplay 12) exitWith { };
-
+	
 	if (ASE_setting_markerTools_enabled) then {
 		call ASE_fnc_initMarkerTools;
 	};
-	call ASE_fnc_disableMarkerPlacement;
+
+	if (ASE_setting_markerTools_restrictPlacementBeforeStart) then {
+		call ASE_fnc_restrictMarkerPlacement;
+	};
 
 };
 
