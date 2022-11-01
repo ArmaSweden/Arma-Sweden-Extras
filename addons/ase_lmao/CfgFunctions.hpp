@@ -8,6 +8,8 @@ class CfgFunctions
         {
             file = "Arma-Sweden-Extras\addons\ase_lmao\functions\events";
             class onTapShoulder {};
+            class enableJudoMode {};
+            class disableJudoMode {};
         };
     };
 };
