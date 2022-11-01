@@ -23,7 +23,8 @@ class CfgFunctions
             file = "Arma-Sweden-Extras\addons\ase_marker_tools\functions\markers";
             class saveMarkers {};
             class loadMarkers {};
-			class disableMarkerPlacement {};
+			class restrictMarkerPlacement {};
+			class isChannelRestricted {};
         };
 		class Display
 		{

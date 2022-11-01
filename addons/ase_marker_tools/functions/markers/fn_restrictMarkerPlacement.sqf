@@ -3,6 +3,7 @@ if (!isMultiplayer) exitWith {};
 // TODO: Make work on first map screen
 // TODO: Disable moving markers (ACE)
 
+// Restrict markers
 ((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["MouseButtonDblClick", {
 
 	// IDs
@@ -45,15 +46,7 @@ if (!isMultiplayer) exitWith {};
 
 		if (!isNull _display) then {
 
-			_isChannelDisabled = [
-				ASE_setting_markerTools_disablePlacementGlobal,
-				ASE_setting_markerTools_disablePlacementSide,
-				ASE_setting_markerTools_disablePlacementCommand,
-				ASE_setting_markerTools_disablePlacementGroup,
-				ASE_setting_markerTools_disablePlacementVehicle
-			];
-
-			if (_isChannelDisabled find false == -1) exitWith {
+			if ([-1] call ASE_fnc_isChannelRestricted) exitWith {
 
 				_display closeDisplay 0;
 
@@ -67,7 +60,7 @@ if (!isMultiplayer) exitWith {};
 			if (ASE_setting_markerTools_disablePlacementSide) then { _channelControl lbDelete 1 };
 			if (ASE_setting_markerTools_disablePlacementGlobal) then { _channelControl lbDelete 0 };
 
-			if (_isChannelDisabled select (currentChannel)) then {
+			if ([currentChannel] call ASE_fnc_isChannelRestricted) then {
 
 				_channelControl lbSetCurSel 0;
 
@@ -91,3 +84,12 @@ if (!isMultiplayer) exitWith {};
 	
 }];
 
+// Restrict polylines
+((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["KeyDown", {
+
+	_this select 1 == 29 && {[currentChannel] call ASE_fnc_isChannelRestricted}
+
+}];
+
+// Without this, players can draw one polyline before the restriction takes effect
+ctrlSetFocus ((findDisplay 12) displayCtrl 51);
