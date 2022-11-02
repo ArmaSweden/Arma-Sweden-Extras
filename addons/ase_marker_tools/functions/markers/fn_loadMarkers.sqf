@@ -45,6 +45,11 @@ _markers = profileNamespace getVariable "ASE_savedMarkers";
 			"_channelID"
 		];
 
+		// Load to group channel if singleplayer
+		if (!isMultiplayer) then {
+			_channelID = "3";
+		};
+
 		_marker = createMarkerLocal [
 			format ["_USER_DEFINED #%1/%2/%3", getPlayerID player, _markerID, _channelID],
 			parseSimpleArray _pos,

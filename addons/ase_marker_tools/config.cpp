@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class ASE_markerCopy
+	class ASE_markerTools
     {
 		author = "SageNTitled of Arma Sweden";
 		name = "ASE Marker Tools";
@@ -14,7 +14,7 @@ class CfgPatches
 
 class CfgFunctions
 {
-    class ASE
+    class ASE_markerTools
     {
         tag = "ASE";
 
