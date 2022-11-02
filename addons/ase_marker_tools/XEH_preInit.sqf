@@ -106,7 +106,7 @@
 	};
 
 	if (ASE_setting_markerTools_restrictPlacementBeforeStart) then {
-		call ASE_fnc_restrictMarkerPlacement;
+		call ASE_fnc_restrictMarkers;
 	};
 
 };
@@ -122,6 +122,6 @@
 		call ASE_fnc_initMarkerTools;
 	};
 	
-	call ASE_fnc_restrictMarkerPlacement;
+	call ASE_fnc_restrictMarkers;
 	
 };
