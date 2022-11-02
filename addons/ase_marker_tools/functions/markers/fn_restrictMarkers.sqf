@@ -2,8 +2,12 @@ if (!isMultiplayer) exitWith {};
 
 _mapDisplay = call ASE_fnc_getMapDisplay;
 
-// Restrict markers
 (_mapDisplay displayCtrl 51) ctrlAddEventHandler ["MouseButtonDblClick", {
+
+	params ["_control", "_button", "_xPos", "_yPos", "_shift", "_ctrl", "_alt"];
+
+	_ranks = ["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"];
+	if (_ranks find rank player >= ASE_setting_markerTools_disablePlacementRankException) exitWith {};
 
 	// IDs for marker placement window
 	//
@@ -26,17 +30,10 @@ _mapDisplay = call ASE_fnc_getMapDisplay;
 	// 1240 = scale slider
 	// 1241 = scale text
 
-	// global
-	// side
-	// command
-	// group
-	// vehicle
-	// direct
+	// Restrict marker placement
+	[_control] spawn {
 
-	_ranks = ["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"];
-	if (_ranks find rank player >= ASE_setting_markerTools_disablePlacementRankException) exitWith {};
-
-	[] spawn {
+		params ["_control"];
 
 		disableserialization;
 		_display = displayNull;
@@ -46,11 +43,17 @@ _mapDisplay = call ASE_fnc_getMapDisplay;
 
 		if (!isNull _display) then {
 
-			if ([-1] call ASE_fnc_isChannelRestricted) exitWith {
+			// Player is trying to edit a marker
+			_marker = ctrlMapMouseOver _control;
+			if (_marker select 0 == "marker") then {
 
-				_display closeDisplay 0;
+				_markerChannel = parseNumber ((_marker select 1) regexFind ["(?!\/)\d+$"] select 0 select 0 select 0);
+				if ([_markerChannel] call ASE_fnc_isChannelRestricted) exitWith { _display closeDisplay 0 };
 
 			};
+
+			// Current channel is restricted
+			if ([currentChannel] call ASE_fnc_isChannelRestricted) exitWith { _display closeDisplay 0 };
 
 			_channelControl = _display displayCtrl 103;
 			
