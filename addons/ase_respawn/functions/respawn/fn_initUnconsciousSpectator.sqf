@@ -1,6 +1,8 @@
 params ["_unit", "_state"];
 
+if (!hasInterface) exitWith {};
 if (_unit != player) exitWith {};
+if (player in (call BIS_fnc_listCuratorPlayers)) exitWith {};
 
 if (_state) then {
 

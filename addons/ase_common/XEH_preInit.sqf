@@ -5,12 +5,6 @@
 	["ASE Common"],
 	false,
 	nil,
-	{
-		if (_this) then {
-			call ASE_fnc_enableDynamicGroups;
-		} else {
-			call ASE_fnc_disableDynamicGroups;
-		};
-	},
+	{ if (_this) then { call ASE_fnc_enableDynamicGroups } else { call ASE_fnc_disableDynamicGroups } },
 	false
 ] call CBA_fnc_addSetting;

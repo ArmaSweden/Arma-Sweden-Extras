@@ -17,7 +17,3 @@ class CfgPatches
 class Extended_PreInit_EventHandlers {
     ASE_Lmao_PreInit = "call compile preprocessFileLineNumbers 'Arma-Sweden-Extras\addons\ase_lmao\XEH_preInit.sqf'";
 };
-
-class Extended_PostInit_EventHandlers {
-    ASE_Lmao_PostInit = "call compile preprocessFileLineNumbers 'Arma-Sweden-Extras\addons\ase_lmao\XEH_postInit.sqf'";
-};

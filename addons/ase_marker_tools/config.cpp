@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class ASE_markerCopy
+	class ASE_markerTools
     {
 		author = "SageNTitled of Arma Sweden";
 		name = "ASE Marker Tools";
@@ -14,7 +14,7 @@ class CfgPatches
 
 class CfgFunctions
 {
-    class ASE
+    class ASE_markers
     {
         tag = "ASE";
 
@@ -23,7 +23,11 @@ class CfgFunctions
             file = "Arma-Sweden-Extras\addons\ase_marker_tools\functions\markers";
             class saveMarkers {};
             class loadMarkers {};
-			class disableMarkerPlacement {};
+			class restrictMarkers {};
+			class isChannelRestricted {};
+			class isMarkerRestricted {};
+			class onMapKeyDown {};
+			class onMapMouseButtonDown {};
         };
 		class Display
 		{
