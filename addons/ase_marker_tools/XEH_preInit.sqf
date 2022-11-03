@@ -95,9 +95,7 @@
 // Trigger on planning phase
 [] spawn {
 
-	waitUntil {
-		!isNull findDisplay 52 || !isNull findDisplay 53 || !isNull findDisplay 12
-	};
+	waitUntil { !isNull findDisplay 52 || !isNull findDisplay 53 || !isNull findDisplay 12 };
 
 	if (!isNull findDisplay 12) exitWith { };
 	
@@ -114,9 +112,7 @@
 // Trigger on game phase
 [] spawn {
 	
-	waitUntil {
-		!isNull findDisplay 12
-	};
+	waitUntil { !isNull findDisplay 12 };
 	
 	if (ASE_setting_markerTools_enabled) then {
 		call ASE_fnc_initMarkerTools;
