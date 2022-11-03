@@ -25,6 +25,7 @@ class CfgFunctions
             class loadMarkers {};
 			class restrictMarkers {};
 			class isChannelRestricted {};
+			class isMarkerRestricted {};
 			class onMapKeyDown {};
 			class onMapMouseButtonDown {};
         };

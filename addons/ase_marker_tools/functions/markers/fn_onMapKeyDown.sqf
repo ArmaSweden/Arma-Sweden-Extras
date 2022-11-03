@@ -12,8 +12,7 @@ if (_key == 211) then {
 	_marker = ctrlMapMouseOver _control;
 	if (_marker select 0 == "marker") then {
 
-		_markerChannel = parseNumber ((_marker select 1) regexFind ["(?!\/)\d+$"] select 0 select 0 select 0);
-		if ([_markerChannel] call ASE_fnc_isChannelRestricted) then { _isActionRestricted = true; };
+		_isActionRestricted = [(_marker select 1)] call ASE_fnc_isMarkerRestricted;
 
 	};
 

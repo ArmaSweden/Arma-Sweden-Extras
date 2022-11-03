@@ -47,9 +47,7 @@ _mapDisplay = call ASE_fnc_getMapDisplay;
 			_marker = ctrlMapMouseOver _control;
 			if (_marker select 0 == "marker") then {
 
-				// TODO: Make into function
-				_markerChannel = parseNumber ((_marker select 1) regexFind ["(?!\/)\d+$"] select 0 select 0 select 0);
-				if ([_markerChannel] call ASE_fnc_isChannelRestricted) exitWith { _display closeDisplay 0 };
+				if ([(_marker select 1)] call ASE_fnc_isMarkerRestricted) exitWith { _display closeDisplay 0 };
 
 			};
 
