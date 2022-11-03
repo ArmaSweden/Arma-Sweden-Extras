@@ -35,7 +35,8 @@ _markers = profileNamespace getVariable "ASE_savedMarkers";
 			"_dir",
 			"_color",
 			"_alpha",
-			"_text"
+			"_text",
+			"_size"
 		];
 
 		_name splitString "#/" params [
@@ -60,7 +61,8 @@ _markers = profileNamespace getVariable "ASE_savedMarkers";
 		_marker setMarkerDirLocal parseNumber _dir;
 		_marker setMarkerColorLocal _color;
 		_marker setMarkerAlphaLocal parseNumber _alpha;
-		_marker setMarkerText _text;
+		_marker setMarkerTextLocal _text;
+		_marker setMarkerSize parseSimpleArray _size;
 		
 	};
 

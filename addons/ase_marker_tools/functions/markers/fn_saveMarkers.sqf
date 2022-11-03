@@ -33,7 +33,8 @@ private _markers = [];
 			markerDir _x,
 			markerColor _x,
 			markerAlpha _x,
-			markerText _x
+			markerText _x,
+			markerSize _x
 		] joinString "|");
 		
 	};
