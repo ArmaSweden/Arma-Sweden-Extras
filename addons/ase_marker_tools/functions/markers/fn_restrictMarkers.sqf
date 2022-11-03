@@ -43,10 +43,11 @@ _mapDisplay = call ASE_fnc_getMapDisplay;
 
 		if (!isNull _display) then {
 
-			// Player is trying to edit a marker
+			// Restrict editing marker
 			_marker = ctrlMapMouseOver _control;
 			if (_marker select 0 == "marker") then {
 
+				// TODO: Make into function
 				_markerChannel = parseNumber ((_marker select 1) regexFind ["(?!\/)\d+$"] select 0 select 0 select 0);
 				if ([_markerChannel] call ASE_fnc_isChannelRestricted) exitWith { _display closeDisplay 0 };
 
@@ -89,7 +90,7 @@ _mapDisplay = call ASE_fnc_getMapDisplay;
 
 if (_mapDisplay == findDisplay 12) then {
 	
-	(_mapDisplay displayCtrl 51) ctrlAddEventHandler ["KeyDown", { _this call ASE_fnc_onMapKeyDown }];
+	_mapDisplay displayAddEventHandler ["KeyDown", { _this call ASE_fnc_onMapKeyDown }];
 	(_mapDisplay displayCtrl 51) ctrlAddEventHandler ["MouseButtonDown", { _this call ASE_fnc_onMapMouseButtonDown }];
 
 	// Without this, players can draw one polyline before the restriction takes effect
