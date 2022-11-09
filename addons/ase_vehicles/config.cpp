@@ -45,6 +45,7 @@ class CfgVehicles
 		// TODO: Change to Swedish crew
 		scope = 0;
 		scopeCurator = 0;
+		ace_hunterkiller = 1;
 		class EventHandlers: EventHandlers
 		{
 			init = "if (local (_this select 0)) then { [(_this select 0), """", [], false] call BIS_fnc_initVehicle; };";
