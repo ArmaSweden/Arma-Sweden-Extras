@@ -24,18 +24,6 @@ class CfgFactionClasses
 	};
 };
 
-class CfgVehicleClasses
-{
-	class ASE_B_Sweden_tanks
-	{
-		displayName = "Tanks";
-	};
-	class ASE_B_Sweden_helicopters
-	{
-		displayName = "Helicopters";
-	};
-};
-
 class CfgEditorSubcategories
 {
 	class ASE_Eden_tanks
@@ -57,7 +45,6 @@ class CfgVehicles
 		// TODO: Change to Swedish crew
 		scope = 0;
 		scopeCurator = 0;
-		vehicleClass = "ASE_B_Sweden_tanks";
 		class EventHandlers: EventHandlers
 		{
 			init = "if (local (_this select 0)) then { [(_this select 0), """", [], false] call BIS_fnc_initVehicle; };";
@@ -100,7 +87,6 @@ class CfgVehicles
 	{
 		scope = 0;
 		scopeCurator = 0;
-		vehicleClass = "ASE_B_Sweden_helicopters";
 		class EventHandlers: EventHandlers
 		{
 			init = "if (local (_this select 0)) then { [(_this select 0), """", [], false] call BIS_fnc_initVehicle; };";
