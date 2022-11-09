@@ -100,3 +100,11 @@ if (_mapDisplay == findDisplay 12) then {
 	(_mapDisplay displayCtrl 51) ctrlAddEventHandler ["MouseButtonDown", { _this call ASE_fnc_onMapMouseButtonDown }];
 
 };
+
+// Workaround to make self interaction possible when Ctrl key is blocked by restricted channels
+["ace_interactMenuOpened", {
+	
+	if (!alive player || !visibleMap) exitWith {};
+	[1] call ACE_interact_menu_fnc_keyDown;
+
+}] call CBA_fnc_addEventHandler;
