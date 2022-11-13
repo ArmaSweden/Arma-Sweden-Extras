@@ -46,7 +46,7 @@ _markers = profileNamespace getVariable "ASE_savedMarkers";
 			"_channelID"
 		];
 
-		if ([parseNumber _channelID] call ASE_fnc_isChannelRestricted) exitWith {};
+		if ([parseNumber _channelID] call ASE_fnc_isChannelRestricted) then { continue };
 
 		// Load to group channel if singleplayer
 		if (!isMultiplayer) then {
