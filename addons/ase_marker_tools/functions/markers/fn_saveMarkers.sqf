@@ -1,5 +1,7 @@
 private _markers = [];
 
+if (count allMapMarkers == 0) exitWith {};
+
 {
 	// Marker must be created by a player
 	if (!(["_USER_DEFINED", _x, true] call BIS_fnc_inString)) then {continue};

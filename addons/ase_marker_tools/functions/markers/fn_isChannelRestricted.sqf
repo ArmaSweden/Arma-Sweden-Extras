@@ -1,5 +1,9 @@
 params ["_channelID"];
 
+_mapDisplay = call ASE_fnc_getMapDisplay;
+_isInPlanningPhase = _mapDisplay isEqualTo findDisplay 52 || _mapDisplay isEqualTo findDisplay 53;
+if (_isInPlanningPhase && !ASE_setting_markerTools_restrictPlacementBeforeStart) exitWith { false };
+
 _isChannelRestricted = [
 	ASE_setting_markerTools_disablePlacementGlobal,
 	ASE_setting_markerTools_disablePlacementSide,
