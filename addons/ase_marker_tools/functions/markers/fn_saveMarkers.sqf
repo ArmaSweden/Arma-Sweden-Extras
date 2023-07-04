@@ -21,7 +21,7 @@ if (count allMapMarkers == 0) exitWith {};
 
 		_markers pushBack ([
 			"POLYLINE",
-			_x,
+			_markerName,
 			markerPolyline _x,
 			markerColor _x
 		] joinString "|");
