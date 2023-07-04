@@ -1,6 +1,7 @@
 _markers = profileNamespace getVariable "ASE_savedMarkers";
 
 {
+
 	if ((_x splitString "|") select 0 == "POLYLINE") then {
 
 		_x splitString "|" params [
@@ -16,6 +17,13 @@ _markers = profileNamespace getVariable "ASE_savedMarkers";
 			"_markerID",
 			"_channelID"
 		];
+
+		// Group channel is the default in singleplayer
+		if (!isMultiplayer) then {
+			_channelID = "3";
+		};
+
+		if ([parseNumber _channelID] call ASE_fnc_isChannelRestricted) then { continue };
 
 		_marker = createMarkerLocal [
 			format ["_USER_DEFINED #%1/%2/%3", getPlayerID player, _markerID, _channelID],
@@ -46,12 +54,12 @@ _markers = profileNamespace getVariable "ASE_savedMarkers";
 			"_channelID"
 		];
 
-		if ([parseNumber _channelID] call ASE_fnc_isChannelRestricted) then { continue };
-
-		// Load to group channel if singleplayer
+		// Group channel is the default in singleplayer
 		if (!isMultiplayer) then {
 			_channelID = "3";
 		};
+
+		if ([parseNumber _channelID] call ASE_fnc_isChannelRestricted) then { continue };
 
 		_marker = createMarkerLocal [
 			format ["_USER_DEFINED #%1/%2/%3", getPlayerID player, _markerID, _channelID],
