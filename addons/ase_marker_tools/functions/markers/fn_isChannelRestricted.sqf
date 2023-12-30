@@ -14,8 +14,8 @@ _isChannelRestricted = [
 	ASE_setting_markerTools_disablePlacementVehicle
 ];
 
-if (_channelID == -1) exitWith {
-	_isChannelRestricted find false == -1
+if (_channelID == -1 || _channelID > 5) exitWith {
+	false
 };
 
 _isChannelRestricted select _channelID
