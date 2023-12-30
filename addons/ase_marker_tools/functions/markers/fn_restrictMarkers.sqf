@@ -55,30 +55,39 @@ _mapDisplay = call ASE_fnc_getMapDisplay;
 			if ([currentChannel] call ASE_fnc_isChannelRestricted) exitWith { _display closeDisplay 0 };
 
 			_channelControl = _display displayCtrl 103;
-			
-			if (ASE_setting_markerTools_disablePlacementVehicle) then { _channelControl lbDelete 4 };
-			if (ASE_setting_markerTools_disablePlacementGroup) then { _channelControl lbDelete 3 };
-			if (ASE_setting_markerTools_disablePlacementCommand) then { _channelControl lbDelete 2 };
-			if (ASE_setting_markerTools_disablePlacementSide) then { _channelControl lbDelete 1 };
-			if (ASE_setting_markerTools_disablePlacementGlobal) then { _channelControl lbDelete 0 };
 
-			if ([currentChannel] call ASE_fnc_isChannelRestricted) then {
+			// Remove ACE event handler for setting current channel (will set incorrect channel when deleting items otherwise)
+			_channelControl ctrlRemoveAllEventHandlers "LBSelChanged";
 
-				_channelControl lbSetCurSel 0;
+			if ([4] call ASE_fnc_isChannelRestricted) then { _channelControl lbDelete 4 };
+			if ([3] call ASE_fnc_isChannelRestricted) then { _channelControl lbDelete 3 };
+			if ([2] call ASE_fnc_isChannelRestricted) then { _channelControl lbDelete 2 };
+			if ([1] call ASE_fnc_isChannelRestricted) then { _channelControl lbDelete 1 };
+			if ([0] call ASE_fnc_isChannelRestricted) then { _channelControl lbDelete 0 };
 
-			} else {
+			for "_i" from 0 to (lbSize _channelControl - 1) do {
 
-				for "_i" from 0 to (lbSize _channelControl - 1) do {
+				if ((parseNumber (_channelControl lbData _i)) isEqualTo currentChannel) exitWith {
 
-					if ((parseNumber (_channelControl lbData _i)) isEqualTo currentChannel) exitWith {
-
-						_channelControl lbSetCurSel _i;
-
-					};
+					systemChat format ["data is %1", (_channelControl lbData _i)];
+					systemChat format ["setting to %1", _i];
+					_channelControl lbSetCurSel _i;
 
 				};
-				
+
 			};
+
+			// Add back event handler for setting current channel again
+			_channelControl ctrlAddEventHandler ["LBSelChanged", { 
+				
+				params ["_ctrl", "_index"];
+
+				_enabledChannels = false call ace_markers_fnc_getEnabledChannels;
+
+				// Get channel ID from lbData instead of index like in ace_markers_fnc_onLBSelChangedChannel
+				setCurrentChannel (_enabledChannels select parseNumber (_ctrl lbData _index));
+
+			}];
 
 		};
 
