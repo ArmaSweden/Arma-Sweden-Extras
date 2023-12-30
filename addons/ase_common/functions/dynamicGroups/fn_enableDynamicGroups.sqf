@@ -1,5 +1,4 @@
 if (!isMultiplayer) exitWith {};
-if (["IsInitialized"] call BIS_fnc_dynamicGroups) exitWith {};
 
 if (isServer) then {
 
