@@ -69,8 +69,6 @@ _mapDisplay = call ASE_fnc_getMapDisplay;
 
 				if ((parseNumber (_channelControl lbData _i)) isEqualTo currentChannel) exitWith {
 
-					systemChat format ["data is %1", (_channelControl lbData _i)];
-					systemChat format ["setting to %1", _i];
 					_channelControl lbSetCurSel _i;
 
 				};
@@ -82,10 +80,8 @@ _mapDisplay = call ASE_fnc_getMapDisplay;
 				
 				params ["_ctrl", "_index"];
 
-				_enabledChannels = false call ace_markers_fnc_getEnabledChannels;
-
 				// Get channel ID from lbData instead of index like in ace_markers_fnc_onLBSelChangedChannel
-				setCurrentChannel (_enabledChannels select parseNumber (_ctrl lbData _index));
+				setCurrentChannel (parseNumber (_ctrl lbData _index));
 
 			}];
 
