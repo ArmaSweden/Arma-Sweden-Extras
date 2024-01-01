@@ -10,5 +10,10 @@ class CfgFunctions
 			class enableDynamicGroups {};
 			class disableDynamicGroups {};
 		};
+		class ViewDistance
+		{
+			file = "Arma-Sweden-Extras\addons\ase_common\functions\viewDistance";
+			class adjustViewDistance {};
+		};
 	};
 };
