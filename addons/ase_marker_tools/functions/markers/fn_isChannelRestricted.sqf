@@ -11,7 +11,8 @@ _isChannelRestricted = [
 	ASE_setting_markerTools_disablePlacementSide,
 	ASE_setting_markerTools_disablePlacementCommand,
 	ASE_setting_markerTools_disablePlacementGroup,
-	ASE_setting_markerTools_disablePlacementVehicle
+	ASE_setting_markerTools_disablePlacementVehicle,
+	ASE_setting_markerTools_disablePlacementDirect
 ];
 
 if (_channelID == -1 || _channelID > 5) exitWith {
