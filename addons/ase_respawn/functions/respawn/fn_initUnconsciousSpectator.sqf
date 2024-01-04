@@ -34,7 +34,7 @@ if (_state) then {
 
 		["Initialize", [player, _side, ASE_setting_respawn_enableUnconsciousSpectateAI, false, true, false, false, false, false, _canSpectateOthers]] call BIS_fnc_EGSpectator;
 
-		sleep 0.5;
+		waitUntil { "GetDisplay" call BIS_fnc_EGSpectator isnotEqualTo displayNull };
 
 		// Force spectate player's unconscious body
 		if (ASE_setting_respawn_unconsciousSpectatorList isEqualTo 0) then {
@@ -42,6 +42,41 @@ if (_state) then {
 			uiNamespace setVariable ["RscEGSpectator_focus", player];
 			["SetCameraMode", ["follow"]] call BIS_fnc_EGSpectatorCamera;
 		};
+
+		_display = "GetDisplay" call BIS_fnc_EGSpectator;
+		
+		_display displayAddEventHandler ["KeyDown", {
+
+			params ["_display", "_key", "_shift", "_ctrl", "_alt"];
+
+			if (_key isEqualTo 57) then {
+
+				// Disable space key for changing perspective when spectating self
+				if (uiNamespace getVariable ["RscEGSpectator_focus", objNull] == player) then {
+
+					true
+
+				};
+
+			}
+
+		}];
+
+		_eventHandler = addMissionEventHandler ["EachFrame", {
+
+			if (isNull (uiNamespace getVariable ["RscEGSpectator_focus", objNull]) || !alive player) exitWith {
+
+				removeMissionEventHandler ["EachFrame", _thisEventHandler];
+
+			};
+			
+			if (uiNamespace getVariable ["RscEGSpectator_focus", objNull] == player && "GetCameraMode" call BIS_fnc_EGSpectatorCamera != "follow") then {
+
+				["SetCameraMode", ["follow"]] call BIS_fnc_EGSpectatorCamera;
+
+			};
+
+		}, [_display]];
 
 		cutText ["","BLACK IN"];
 
