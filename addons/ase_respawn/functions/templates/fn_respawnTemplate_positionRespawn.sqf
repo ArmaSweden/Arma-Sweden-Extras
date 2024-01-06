@@ -6,4 +6,8 @@ if (!((localNamespace getVariable ["ASE_selectedRespawnPoint", objNull]) isEqual
 	[player, localNamespace getVariable "ASE_selectedRespawnPoint"] call BIS_fnc_moveToRespawnPosition;
 };
 
-setPlayerRespawnTime _respawnDelay;
+if (_respawnDelay < 5) then {
+	setPlayerRespawnTime 5;
+} else {
+	setPlayerRespawnTime _respawnDelay;
+};
