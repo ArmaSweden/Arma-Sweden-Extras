@@ -22,8 +22,8 @@ ASE_respawnMarkers = [];
 	_mapCtrl = _mapDisplay displayCtrl 182602;
 
 	if ("ASE_spectator" in getMissionConfigValue ["respawnTemplates", []]) then {
-		// Open spectator when map is closed and if spectator respawn template is used
 		_mapCtrl ctrlAddEventHandler ["Destroy", {
+			// Open spectator when map is closed and if spectator respawn template is used
 			if ((localNamespace getVariable ["ASE_selectedRespawnPoint", objNull]) isEqualTo objNull) then {
 				[[blufor]] call ASE_fnc_openSpectator;
 			};
@@ -31,9 +31,7 @@ ASE_respawnMarkers = [];
 		_mapDisplay displayAddEventHandler ["KeyDown", {
 			params ["_display", "_key", "_shift", "_ctrl", "_alt"];
 			if (_key == 50) then {
-				[] spawn {
-					[[blufor]] call ASE_fnc_openSpectator;
-				};
+				_display closeDisplay 2;
 				true
 			};
 		}];
@@ -41,9 +39,9 @@ ASE_respawnMarkers = [];
 		_mapDisplay displayAddEventHandler ["KeyDown", {
 			params ["_display", "_key", "_shift", "_ctrl", "_alt"];
 			
-			// Open escape menu
 			if (_key == 1) then {
 				_display closeDisplay 2;
+				// Open escape menu
 				// TODO: Add black background
 				_escapeMenuDisplay = (call BIS_fnc_displayMission) createDisplay "RscDisplayMPInterrupt";
 				_escapeMenuDisplay displayAddEventHandler ["Unload", {
@@ -52,10 +50,11 @@ ASE_respawnMarkers = [];
 				}];
 				// Really don't wanna do this, but it causes displays to be unresponsive (see GitHub issue #69)
 				(findDisplay -1) closeDisplay 2;
+				true
 			};
 
-			// Prevent opening map
 			if (_key == 50) then {
+				// Prevent opening standard map
 				true
 			};
 		}];

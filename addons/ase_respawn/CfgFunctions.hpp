@@ -27,6 +27,7 @@ class CfgFunctions
 			class ctrlRespawnMarkerIconMouseExit {};
 			class ctrlRespawnMarkerIconMouseButtonClick {};
 			class ctrlExpandRespawnMarkerTooltip {};
+			class isRespawnMapOpen {};
 			class updateRespawnMarkers {};
 			class getRespawnPosition {};
 			class getRespawnName {};

@@ -1,0 +1,1 @@
+(findDisplay 182600) isNotEqualTo displayNull
