@@ -16,11 +16,10 @@ ASE_respawnPoints = [];
 ASE_respawnMarkers = [];
 
 [] spawn {
+	
 	// Create map
-	_mapDisplay = (call BIS_fnc_displayMission) createDisplay "RscRespawnMapDisplay";
+	_mapDisplay = createDialog ["RscRespawnMapDisplay", true];
 	_mapCtrl = _mapDisplay displayCtrl 182602;
-
-	["DestroyDisplay"] call BIS_fnc_EGSpectator;
 
 	if ("ASE_spectator" in getMissionConfigValue ["respawnTemplates", []]) then {
 		// Open spectator when map is closed and if spectator respawn template is used
@@ -45,14 +44,19 @@ ASE_respawnMarkers = [];
 			
 			// Open escape menu
 			if (_key == 1) then {
-				[] spawn {
-					// TODO: Add black background
-					_escapeMenuDisplay = (call BIS_fnc_displayMission) createDisplay "RscDisplayMPInterrupt";
-					_escapeMenuDisplay displayAddEventHandler ["Unload", {
-						// TODO: Check if player has already respawned
-						call ASE_fnc_openRespawnMap;
-					}];
-				};
+
+				_display closeDisplay 2;
+				// TODO: Add black background
+				_escapeMenuDisplay = (call BIS_fnc_displayMission) createDisplay "RscDisplayMPInterrupt";
+				_escapeMenuDisplay displayAddEventHandler ["Unload", {
+
+					// TODO: Check if player has already respawned
+					call ASE_fnc_openRespawnMap;
+
+				}];
+				// Really don't wanna do this, but it causes displays to be unresponsive (see GitHub issue #69)
+				(findDisplay -1) closeDisplay 2;
+
 			};
 
 			// Prevent opening map
