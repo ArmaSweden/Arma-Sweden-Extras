@@ -13,7 +13,6 @@ _showNotification = _logic getVariable ["Notification", false];
 _removePrevious = _logic getVariable ["RemovePrevious", 0]; // TODO: Implement
 
 _disableModule = {
-	
 	//_activeTime = param [0, 0, [0]];
 
 	if (_activeTime > 0 && _logic getVariable ["isOnTimer", false]) exitWith {};
@@ -26,7 +25,6 @@ _disableModule = {
 };
 
 if (_activated) then {
-
 	if (_logic getVariable ["isEnabled", false]) exitWith {
 		_logic setVariable ["endTime", time + _activeTime];
 	};
@@ -65,25 +63,19 @@ if (_activated) then {
 	_logic setVariable ["isEnabled", true];
 
 	if (_activeTime > 0) then {
-
 		_logic setVariable ["isOnTimer", true];
 		[_logic, _activeTime, _disableModule] spawn {
-
 			params ["_logic", "_activeTime", "_disableModule"];
 
 			_logic setVariable ["endTime", time + _activeTime];
 			waitUntil { time >= _logic getVariable "endTime" || !(_logic getVariable ["isEnabled", true])};
 			_logic setVariable ["isOnTimer", false];
 			call _disableModule;
-
 		};
-
 	};
 
 } else {
-	
 	call _disableModule;
-	
 };
 
 true;

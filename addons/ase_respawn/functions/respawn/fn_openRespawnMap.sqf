@@ -39,31 +39,25 @@ ASE_respawnMarkers = [];
 		}];
 	} else {
 		_mapDisplay displayAddEventHandler ["KeyDown", {
-			
 			params ["_display", "_key", "_shift", "_ctrl", "_alt"];
 			
 			// Open escape menu
 			if (_key == 1) then {
-
 				_display closeDisplay 2;
 				// TODO: Add black background
 				_escapeMenuDisplay = (call BIS_fnc_displayMission) createDisplay "RscDisplayMPInterrupt";
 				_escapeMenuDisplay displayAddEventHandler ["Unload", {
-
 					// TODO: Check if player has already respawned
 					call ASE_fnc_openRespawnMap;
-
 				}];
 				// Really don't wanna do this, but it causes displays to be unresponsive (see GitHub issue #69)
 				(findDisplay -1) closeDisplay 2;
-
 			};
 
 			// Prevent opening map
 			if (_key == 50) then {
 				true
 			};
-			
 		}];
 	};
 

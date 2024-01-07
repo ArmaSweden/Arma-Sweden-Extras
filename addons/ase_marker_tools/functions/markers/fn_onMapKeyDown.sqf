@@ -6,10 +6,8 @@ if (_ranks find rank player >= ASE_setting_markerTools_disablePlacementRankExcep
 _isActionRestricted = false;
 
 switch (_key) do {
-
 	// Del
 	case 211: {
-
 		// Restrict deleting marker
 		_control = _display displayCtrl 51;
 		_marker = ctrlMapMouseOver _control;
@@ -18,19 +16,14 @@ switch (_key) do {
 			_isActionRestricted = [(_marker select 1)] call ASE_fnc_isMarkerRestricted;
 
 		};
-
 	};
-
 	// Ctrl
 	case 29: {
-
 		// Restrict polylines
 		if ([currentChannel] call ASE_fnc_isChannelRestricted) then {
 			_isActionRestricted = true;
 		};
-
 	};
-
 	default { };
 };
 

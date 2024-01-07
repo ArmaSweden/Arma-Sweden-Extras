@@ -47,9 +47,7 @@ _mapDisplay = call ASE_fnc_getMapDisplay;
 			// Restrict editing marker
 			_marker = ctrlMapMouseOver _control;
 			if (_marker select 0 == "marker") then {
-
 				if ([(_marker select 1)] call ASE_fnc_isMarkerRestricted) exitWith { _display closeDisplay 0 };
-
 			};
 
 			if ([currentChannel] call ASE_fnc_isChannelRestricted) exitWith { _display closeDisplay 0 };
@@ -66,35 +64,28 @@ _mapDisplay = call ASE_fnc_getMapDisplay;
 			if ([0] call ASE_fnc_isChannelRestricted) then { _channelCtrl lbDelete 0 };
 
 			if (!([5] call ASE_fnc_isChannelRestricted)) then {
-
 				_index = _channelCtrl lbAdd "Direct Channel";
 				_channelCtrl lbSetData [_index, "5"];
 
 				[_channelCtrl, _index] spawn {
-
 					params ["_channelCtrl", "_index"];
 
 					_eventHandler = addMissionEventHandler ["EachFrame", {
-
 						_channelCtrl = _thisArgs select 0;
 						_index = _thisArgs select 1;
 
 						_channelCtrl lbSetColor [_index, [1, 1, 1, 1]];
-
 					}, [_channelCtrl, _index]];
 
 					waitUntil { (_channelCtrl lbColor _index) isEqualTo [1, 1, 1, 1] };
 
 					removeMissionEventHandler ["EachFrame", _eventHandler];
-
 				};
 
 				if (currentChannel == 5) then {
-					
 					_channelCtrl lbSetCurSel _index;
 
 					[_display] spawn {
-
 						params ["_display"];
 
 						_confirmButtonCtrl = _display displayCtrl 1;
@@ -110,21 +101,14 @@ _mapDisplay = call ASE_fnc_getMapDisplay;
 						waitUntil { ctrlEnabled _confirmButtonCtrl};
 
 						removeMissionEventHandler ["EachFrame", _eventHandler];
-
 					};
-
 				};
-				
 			};
 
 			for "_i" from 0 to (lbSize _channelCtrl - 1) do {
-
 				if ((parseNumber (_channelCtrl lbData _i)) isEqualTo currentChannel) exitWith {
-
 					_channelCtrl lbSetCurSel _i;
-
 				};
-
 			};
 
 			// Add back event handler for setting current channel again
@@ -133,9 +117,7 @@ _mapDisplay = call ASE_fnc_getMapDisplay;
 
 				// Enable OK button when direct channel is selected
 				if (_ctrl lbData _index == "5") then {
-
 					[] spawn {
-
 						_display = findDisplay 54;
 						_confirmButtonCtrl = _display displayCtrl 1;
 						
@@ -150,41 +132,29 @@ _mapDisplay = call ASE_fnc_getMapDisplay;
 						waitUntil { ctrlEnabled _confirmButtonCtrl};
 
 						removeMissionEventHandler ["EachFrame", _eventHandler];
-
 					};
-					
 				};
 
 				// Get channel ID from lbData instead of index like in ace_markers_fnc_onLBSelChangedChannel
 				setCurrentChannel (parseNumber (_ctrl lbData _index));
-
 			}];
-
 		};
-
 	};
-	
 }];
 
 if (_mapDisplay == findDisplay 12) then {
-	
 	_mapDisplay displayAddEventHandler ["KeyDown", { _this call ASE_fnc_onMapKeyDown }];
 	(_mapDisplay displayCtrl 51) ctrlAddEventHandler ["MouseButtonDown", { _this call ASE_fnc_onMapMouseButtonDown }];
 
 	// Without this, players can draw one polyline before the restriction takes effect
 	ctrlSetFocus (_mapDisplay displayCtrl 51);
-
 } else {
-	
 	_mapDisplay displayAddEventHandler ["KeyDown", { _this call ASE_fnc_onMapKeyDown }];
 	(_mapDisplay displayCtrl 51) ctrlAddEventHandler ["MouseButtonDown", { _this call ASE_fnc_onMapMouseButtonDown }];
-
 };
 
 // Workaround to make self interaction possible when Ctrl key is blocked by restricted channels
 ["ace_interactMenuOpened", {
-	
 	if (!alive player || !visibleMap) exitWith {};
 	[1] call ACE_interact_menu_fnc_keyDown;
-
 }] call CBA_fnc_addEventHandler;

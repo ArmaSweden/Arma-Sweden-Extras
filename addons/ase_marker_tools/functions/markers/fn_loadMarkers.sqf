@@ -1,9 +1,7 @@
 _markers = profileNamespace getVariable "ASE_savedMarkers";
 
 {
-
 	if ((_x splitString "|") select 0 == "POLYLINE") then {
-
 		_x splitString "|" params [
 			"",
 			"_name",
@@ -33,9 +31,7 @@ _markers = profileNamespace getVariable "ASE_savedMarkers";
 		];
 		_marker setMarkerPolylineLocal parseSimpleArray _path;
 		_marker setMarkerColor _color;
-
 	} else {
-
 		_x splitString "|" params [
 			"_name",
 			"_pos",
@@ -73,7 +69,5 @@ _markers = profileNamespace getVariable "ASE_savedMarkers";
 		_marker setMarkerAlphaLocal parseNumber _alpha;
 		_marker setMarkerTextLocal _text;
 		_marker setMarkerSize parseSimpleArray _size;
-		
 	};
-
 } forEach _markers;

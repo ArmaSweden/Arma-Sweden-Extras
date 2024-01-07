@@ -42,11 +42,9 @@ params ["_side"];
 			// Don't open escape menu if respawn map is open
 			// Prevents visual glitch when closing respawn map with esc
 			if (_key == 1) then {
-
 				if (findDisplay 182600 isNotEqualTo displayNull) then {
 					_return = true;
 				};
-
 			};
 
 			_return

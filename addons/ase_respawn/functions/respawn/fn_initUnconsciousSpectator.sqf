@@ -46,36 +46,24 @@ if (_state) then {
 		_display = "GetDisplay" call BIS_fnc_EGSpectator;
 		
 		_display displayAddEventHandler ["KeyDown", {
-
 			params ["_display", "_key", "_shift", "_ctrl", "_alt"];
 
 			if (_key isEqualTo 57) then {
-
 				// Disable space key for changing perspective when spectating self
 				if (uiNamespace getVariable ["RscEGSpectator_focus", objNull] == player) then {
-
 					true
-
 				};
-
-			}
-
+			};
 		}];
 
 		_eventHandler = addMissionEventHandler ["EachFrame", {
-
 			if (isNull (uiNamespace getVariable ["RscEGSpectator_focus", objNull]) || !alive player) exitWith {
-
 				removeMissionEventHandler ["EachFrame", _thisEventHandler];
-
 			};
 			
 			if (uiNamespace getVariable ["RscEGSpectator_focus", objNull] == player && "GetCameraMode" call BIS_fnc_EGSpectatorCamera != "follow") then {
-
 				["SetCameraMode", ["follow"]] call BIS_fnc_EGSpectatorCamera;
-
 			};
-
 		}, [_display]];
 
 		cutText ["","BLACK IN"];
@@ -85,7 +73,5 @@ if (_state) then {
 	};
 
 } else {
-
 	call ASE_fnc_closeUnconsciousSpectator;
-
 };

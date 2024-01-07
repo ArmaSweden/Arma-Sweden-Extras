@@ -6,7 +6,5 @@ if (_ranks find rank player >= ASE_setting_markerTools_disablePlacementRankExcep
 // Restrict moving marker
 _marker = ctrlMapMouseOver _displayOrControl;
 if (_marker select 0 == "marker") then {
-
 	if (_button == 0 && _alt && [(_marker select 1)] call ASE_fnc_isMarkerRestricted) exitWith { true };
-	
 };
