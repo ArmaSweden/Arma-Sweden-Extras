@@ -43,6 +43,13 @@ if (_state) then {
 			["SetCameraMode", ["follow"]] call BIS_fnc_EGSpectatorCamera;
 		};
 
+		_spectatorFocus = uiNamespace getVariable ["RscEGSpectator_focus", objNull];
+		localNamespace setVariable ["ASE_spectatorFocus", _spectatorFocus];
+		if (_spectatorFocus == player) then {
+			// Make radio audible when spectating self
+			[player, false] call TFAR_fnc_forceSpectator;
+		};
+
 		_display = "GetDisplay" call BIS_fnc_EGSpectator;
 		
 		_display displayAddEventHandler ["KeyDown", {
@@ -57,12 +64,23 @@ if (_state) then {
 		}];
 
 		_eventHandler = addMissionEventHandler ["EachFrame", {
-			if (isNull (uiNamespace getVariable ["RscEGSpectator_focus", objNull]) || !alive player) exitWith {
+			_spectatorFocus = uiNamespace getVariable ["RscEGSpectator_focus", objNull];
+
+			if (isNull _spectatorFocus || !alive player) exitWith {
 				removeMissionEventHandler ["EachFrame", _thisEventHandler];
 			};
 			
-			if (uiNamespace getVariable ["RscEGSpectator_focus", objNull] == player && "GetCameraMode" call BIS_fnc_EGSpectatorCamera != "follow") then {
+			if (_spectatorFocus == player && "GetCameraMode" call BIS_fnc_EGSpectatorCamera != "follow") then {
 				["SetCameraMode", ["follow"]] call BIS_fnc_EGSpectatorCamera;
+			};
+
+			if (_spectatorFocus != localNamespace getVariable ["ASE_spectatorFocus", objNull]) then {
+				if (_spectatorFocus == player) then {
+					[player, false] call TFAR_fnc_forceSpectator;
+				} else {
+					[player, true] call TFAR_fnc_forceSpectator;
+				};
+				localNamespace setVariable ["ASE_spectatorFocus", _spectatorFocus];
 			};
 		}, [_display]];
 

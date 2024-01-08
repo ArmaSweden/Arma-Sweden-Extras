@@ -8,5 +8,6 @@ if (!(["IsInitialized"] call BIS_fnc_EGSpectator)) exitWith {};
 	cutText ["", "BLACK OUT", 0.25];
 	sleep 0.25;
 	["Terminate"] call BIS_fnc_EGSpectator;
+	localNamespace setVariable ["ASE_spectatorFocus", objNull];
 	cutText ["","BLACK IN", 0.25];
 };
