@@ -67,6 +67,17 @@
 ] call CBA_fnc_addSetting;
 
 [
+	"ASE_setting_markerTools_disablePlacementDirect",
+	"CHECKBOX",
+	["Disable markers in direct channel", "Disables placement of markers in the direct channel."],
+	["ASE Marker Tools", "Marker placement restrictions"],
+	false,
+	nil,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
 	"ASE_setting_markerTools_disablePlacementRankException",
 	"LIST",
 	["Rank exception to marker restrictions", "Units with this rank or higher will be able to place markers despite restrictions."],

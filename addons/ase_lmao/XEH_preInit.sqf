@@ -1,7 +1,7 @@
 [
 	"ASE_setting_lmao_enableTapShoulderKnockout",
 	"CHECKBOX",
-	["Judo mode", "Tapping someone's shoulder causes them to ragdoll."],
+	["Judo mode", "Having your shoulder tapped causes you to ragdoll."],
 	["ASE Lmao"],
 	false,
 	nil,

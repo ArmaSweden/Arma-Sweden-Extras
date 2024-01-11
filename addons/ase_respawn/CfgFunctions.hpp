@@ -27,12 +27,19 @@ class CfgFunctions
 			class ctrlRespawnMarkerIconMouseExit {};
 			class ctrlRespawnMarkerIconMouseButtonClick {};
 			class ctrlExpandRespawnMarkerTooltip {};
+			class isRespawnMapOpen {};
 			class updateRespawnMarkers {};
 			class getRespawnPosition {};
 			class getRespawnName {};
 			class ctrlSetRespawnMarkerName {};
 			class initUnconsciousSpectator {};
 			class closeUnconsciousSpectator {};
+		};
+		class Ui
+		{
+			file = "Arma-Sweden-Extras\addons\ase_respawn\functions\ui";
+			class onRespawnPromptMouseEnter {};
+			class onRespawnPromptMouseExit {};
 		};
     };
 };

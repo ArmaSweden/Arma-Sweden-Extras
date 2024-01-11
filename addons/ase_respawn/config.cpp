@@ -16,6 +16,7 @@ class CfgPatches
 #include "CfgVehicles.hpp"
 #include "CfgRespawnTemplates.hpp"
 #include "defines.hpp"
+#include "RscRespawn.hpp"
 #include "RscRespawnMap.hpp"
 #include "RscRespawnMarker.hpp"
 #include "RscRespawnPrompt.hpp"

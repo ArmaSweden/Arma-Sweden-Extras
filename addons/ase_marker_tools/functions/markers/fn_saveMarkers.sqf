@@ -18,16 +18,13 @@ if (count allMapMarkers == 0) exitWith {};
 	if (_playerID != getPlayerID player) then { continue };
 
 	if (markerShape _x == "POLYLINE") then {
-
 		_markers pushBack ([
 			"POLYLINE",
-			_x,
+			_markerName,
 			markerPolyline _x,
 			markerColor _x
 		] joinString "|");
-
 	} else {
-		
 		_markers pushBack ([
 			_markerName,
 			markerPos _x,
@@ -38,9 +35,7 @@ if (count allMapMarkers == 0) exitWith {};
 			markerText _x,
 			markerSize _x
 		] joinString "|");
-		
 	};
-
 } forEach allMapMarkers;
 
 profileNamespace setVariable ["ASE_savedMarkers", _markers];

@@ -34,7 +34,7 @@ if (_state) then {
 
 		["Initialize", [player, _side, ASE_setting_respawn_enableUnconsciousSpectateAI, false, true, false, false, false, false, _canSpectateOthers]] call BIS_fnc_EGSpectator;
 
-		sleep 0.5;
+		waitUntil { "GetDisplay" call BIS_fnc_EGSpectator isnotEqualTo displayNull };
 
 		// Force spectate player's unconscious body
 		if (ASE_setting_respawn_unconsciousSpectatorList isEqualTo 0) then {
@@ -43,6 +43,51 @@ if (_state) then {
 			["SetCameraMode", ["follow"]] call BIS_fnc_EGSpectatorCamera;
 		};
 
+		_spectatorFocus = uiNamespace getVariable ["RscEGSpectator_focus", objNull];
+		localNamespace setVariable ["ASE_spectatorFocus", _spectatorFocus];
+		if (_spectatorFocus == player && isClass(configFile >> "CfgPatches" >> "tfar_core")) then {
+			// Make radio audible when spectating self
+			[player, false] call TFAR_fnc_forceSpectator;
+		};
+
+		_display = "GetDisplay" call BIS_fnc_EGSpectator;
+		
+		_display displayAddEventHandler ["KeyDown", {
+			params ["_display", "_key", "_shift", "_ctrl", "_alt"];
+
+			if (_key isEqualTo 57) then {
+				// Disable space key for changing perspective when spectating self
+				if (uiNamespace getVariable ["RscEGSpectator_focus", objNull] == player) then {
+					true
+				};
+			};
+		}];
+
+		_eventHandler = addMissionEventHandler ["EachFrame", {
+			_spectatorFocus = uiNamespace getVariable ["RscEGSpectator_focus", objNull];
+
+			if (isNull _spectatorFocus || !alive player) exitWith {
+				removeMissionEventHandler ["EachFrame", _thisEventHandler];
+			};
+			
+			// Only third person allowed when spectating self
+			if (_spectatorFocus == player && "GetCameraMode" call BIS_fnc_EGSpectatorCamera != "follow") then {
+				["SetCameraMode", ["follow"]] call BIS_fnc_EGSpectatorCamera;
+			};
+
+			// Spectator focus changed
+			if (_spectatorFocus != localNamespace getVariable ["ASE_spectatorFocus", objNull]) then {
+				if (isClass(configFile >> "CfgPatches" >> "tfar_core")) then {
+					if (_spectatorFocus == player) then {
+						[player, false] call TFAR_fnc_forceSpectator;
+					} else {
+						[player, true] call TFAR_fnc_forceSpectator;
+					};
+				};
+				localNamespace setVariable ["ASE_spectatorFocus", _spectatorFocus];
+			};
+		}, [_display]];
+
 		cutText ["","BLACK IN"];
 
 		localNamespace setVariable ["ASE_isBootingUnconsciousSpectator", false];
@@ -50,7 +95,5 @@ if (_state) then {
 	};
 
 } else {
-
 	call ASE_fnc_closeUnconsciousSpectator;
-
 };
