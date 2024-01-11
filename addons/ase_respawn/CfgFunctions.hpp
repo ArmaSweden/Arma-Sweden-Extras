@@ -35,5 +35,11 @@ class CfgFunctions
 			class initUnconsciousSpectator {};
 			class closeUnconsciousSpectator {};
 		};
+		class Ui
+		{
+			file = "Arma-Sweden-Extras\addons\ase_respawn\functions\ui";
+			class onRespawnPromptMouseEnter {};
+			class onRespawnPromptMouseExit {};
+		};
     };
 };

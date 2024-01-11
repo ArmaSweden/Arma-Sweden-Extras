@@ -23,7 +23,7 @@ class RscRespawnMarker: RscControlsGroup
 					y = 0;
 					w = 5 * pixelW * pixelGrid;
 					h = 5 * pixelH * pixelGrid;
-					colorBackground[] = COLOR_BACKGROUND;
+					colorBackground[] = C_COLOR_BACKGROUND;
 				};
 				class RscRespawnMarkerIconPicture: RscPicture
 				{
@@ -67,7 +67,7 @@ class RscRespawnMarker: RscControlsGroup
 					y = 0;
 					w = 20 * pixelW * pixelGrid;
 					h = 7 * pixelH * pixelGrid;
-					colorBackground[] = COLOR_BACKGROUND;
+					colorBackground[] = C_COLOR_BACKGROUND;
 				};
 				class RscRespawnMarkerTooltipName: RscText
 				{
